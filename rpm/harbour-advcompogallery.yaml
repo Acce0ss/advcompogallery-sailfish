@@ -33,7 +33,7 @@ PkgConfigBR:
 # Runtime dependencies which are not automatically detected
 Requires:
   - sailfishsilica-qt5 >= 0.10.9 
-
+  - qt5-qtdeclarative-import-positioning >= 5.0
 # All installed files
 Files:
   - '%{_bindir}'

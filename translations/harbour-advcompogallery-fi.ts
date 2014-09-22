@@ -4,56 +4,65 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="38"/>
         <source>My Cover</source>
         <translatorcomment>kiva juttu</translatorcomment>
         <translation>Mun kansi</translation>
     </message>
 </context>
 <context>
-    <name>PositioningPage</name>
+    <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="11"/>
         <source>Positioning</source>
         <translation>Paikannus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="15"/>
+        <source>Getting GPS coordinates etc.</source>
+        <translation>GPS koordinaattien haku yms.</translation>
+    </message>
+    <message>
+        <source>Sensors and measurement</source>
+        <translation>Sensorit ja mittaukset</translation>
+    </message>
+    <message>
+        <source>Components</source>
+        <translation>Osat</translation>
+    </message>
+</context>
+<context>
+    <name>PositioningPage</name>
+    <message>
+        <source>Positioning</source>
+        <translation>Paikannus</translation>
+    </message>
+    <message>
         <source>Available position sources</source>
         <translation>Tarjolla olevat paikannusmenetelmät</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="22"/>
         <source>Used positioning method: %1</source>
         <translation>Käytetty paikannusmenetelmä: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="29"/>
         <source>Satellite</source>
         <translation>Satelliittipaikannus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="32"/>
         <source>Not available</source>
         <translation>Ei menetelmiä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="35"/>
         <source>Non-satellite</source>
         <translation>Muu kuin satelliitti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="38"/>
         <source>Multiple</source>
         <translation>Useita</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="41"/>
         <source>source error</source>
         <translation>Paikannuslähteen virhe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PositioningPage.qml" line="51"/>
         <source>You&apos;re at %1 latitude, %2 longitude</source>
         <translation>Olet leveyspiirillä %1 ja pituuspiirillä %2</translation>
     </message>

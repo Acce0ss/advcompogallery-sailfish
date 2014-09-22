@@ -39,5 +39,5 @@ import "pages"
 ApplicationWindow {
     id: mainWindow
     initialPage: Qt.resolvedUrl("pages/MainPage.qml")
-    cover: Qt.resolvedUrl("pages/Cover.qml")
+  //  cover: Qt.resolvedUrl("pages/Cover.qml")
 }

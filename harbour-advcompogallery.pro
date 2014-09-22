@@ -26,34 +26,13 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     translations/*.ts \
     harbour-advcompogallery.desktop \
     qml/cover/CoverPage.qml \
-    qml/pages/WizardPage.qml \
-    qml/pages/WebViewPage.qml \
-    qml/pages/TextInputPage.qml \
-    qml/pages/SliderPage.qml \
-    qml/pages/SearchPage.qml \
-    qml/pages/ProgressPage.qml \
-    qml/pages/PanelPage.qml \
-    qml/pages/PageStackPage.qml \
-    qml/pages/OrientationPage.qml \
-    qml/pages/OpacityRamp.qml \
-    qml/pages/MenuPage.qml \
     qml/pages/MainPage.qml \
-    qml/pages/LabelPage.qml \
-    qml/pages/InteractionHintPage.qml \
-    qml/pages/HapticPage.qml \
-    qml/pages/FormatterPage.qml \
-    qml/pages/FontComboBox.qml \
-    qml/pages/EffectPage.qml \
-    qml/pages/DialogPage.qml \
-    qml/pages/CoverPage.qml \
-    qml/pages/CoverExample.qml \
-    qml/pages/Cover.qml \
-    qml/pages/ComboBoxPage.qml \
-    qml/pages/ButtonPage.qml \
-    qml/pages/ButtonGroup.qml
+    qml/pages/PositioningPage.qml \
+    translations/harbour-advcompogallery-fi.ts
 
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-advcompogallery-de.ts
+CODECFORTR = UTF-8
+TRANSLATIONS += translations/harbour-advcompogallery-fi.ts
 

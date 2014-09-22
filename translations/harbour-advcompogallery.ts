@@ -9,30 +9,61 @@
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
+    <name>MainPage</name>
     <message>
-        <source>Show Page 2</source>
+        <source>Components</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UI Template</source>
+        <source>Positioning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hello Sailors</source>
+        <source>Getting GPS coordinates etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sensors and measurement</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SecondPage</name>
+    <name>PositioningPage</name>
     <message>
-        <source>Nested Page</source>
+        <source>Positioning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Item</source>
+        <source>Available position sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used positioning method: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You&apos;re at %1 latitude, %2 longitude</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Satellite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Non-satellite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multiple</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>source error</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
-

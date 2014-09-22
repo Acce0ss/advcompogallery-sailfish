@@ -42,144 +42,28 @@ Page {
         id: pagesModel
 
         ListElement {
-            page: "ButtonPage.qml"
-            title: "Buttons"
-            subtitle: "Assorted Button variants"
-            section: "Controls"
-        }
-        ListElement {
-            page: "ComboBoxPage.qml"
-            title: "Combo Box"
-            subtitle: "ComboBox component"
-            section: "Controls"
-        }
-        ListElement {
-            page: "MenuPage.qml"
-            title: "Menus"
-            subtitle: "Set of miscellaneous components"
-            section: "Controls"
-        }
-        ListElement {
-            page: "SliderPage.qml"
-            title: "Slider"
-            subtitle: "Slider can be used either as progress indicator or for selecting a value in a given range"
-            section: "Controls"
-        }
-        ListElement {
-            page: "ProgressPage.qml"
-            title: "Progress Indicators"
-            subtitle: "Progress indicator components"
-            section: "Controls"
-        }
-        ListElement {
-            page: "FormatterPage.qml"
-            title: "Formatter"
-            subtitle: "Text Formatting"
-            section: "Text"
-        }
-        ListElement {
-            page: "LabelPage.qml"
-            title: "Labels"
-            subtitle: "Assorted labels"
-            section: "Text"
-        }
-        ListElement {
-            page: "TextInputPage.qml"
-            title: "Text Input"
-            subtitle: "TextField and TextArea components"
-            section: "Text"
-        }
-        ListElement {
-            page: "WizardPage.qml"
-            title: "Account creation wizard"
-            subtitle: "Account creation wizard"
-            section: "Text"
-        }
-        ListElement {
-            page: "CoverPage.qml"
-            title: "Cover View"
-            subtitle: "Cover is visible in switcher"
-            section: "View"
-        }
-        ListElement {
-            page: "DialogPage.qml"
-            title: "Dialogs"
-            subtitle: "Assorted dialogs"
-            section: "View"
-        }
-        ListElement {
-            page: "OrientationPage.qml"
-            title: "Orientation"
-            subtitle: "How to manage the window orientation"
-            section: "View"
-        }
-        ListElement {
-            page: "PageStackPage.qml"
-            title: "Page Stack"
-            subtitle: "How to manage the page stack"
-            section: "View"
-        }
-        ListElement {
-            page: "InteractionHintPage.qml"
-            title: "Touch hints"
-            subtitle: "Animations to guide user"
-            section: "View"
-        }
-        ListElement {
-            page: "PanelPage.qml"
-            title: "Panels"
-            subtitle: "Panel components"
-            section: "View"
-        }
-
-        ListElement {
-            page: "WebViewPage.qml"
-            title: "Web View"
-            subtitle: "How to use web view"
-            section: "View"
-        }
-
-        ListElement {
-            page: "EffectPage.qml"
-            title: "Effects"
-            subtitle: "Glass effects and shaders"
-            section: "Styling and Effects"
-        }
-        ListElement {
-            page: "HapticPage.qml"
-            title: "Haptics"
-            subtitle: "Haptic Effects"
-            section: "Styling and Effects"
-        }
-        ListElement {
-            page: "OpacityRamp.qml"
-            title: "Opacity Ramp"
-            subtitle: "Opacity Ramp properties"
-            section: "Styling and Effects"
-        }
-        ListElement {
-            page: "SearchPage.qml"
-            title: "Search"
-            subtitle: "Search page shows how to implement in-application search"
-            section: "Example"
+            page: "PositioningPage.qml"
+            title: QT_TR_NOOP("Positioning")
+            subtitle: QT_TR_NOOP("Getting GPS coordinates etc.")
+            section: QT_TR_NOOP("Sensors and measurement")
         }
     }
     SilicaListView {
         id: listView
         anchors.fill: parent
         model: pagesModel
-        header: PageHeader { title: "Components" }
+        header: PageHeader { title: qsTr("Components") }
         section {
             property: 'section'
             delegate: SectionHeader {
-                text: section
+              text: qsTr(section)
             }
         }
         delegate: BackgroundItem {
             width: listView.width
             Label {
                 id: firstName
-                text: model.title
+                text: qsTr(model.title)
                 color: highlighted ? Theme.highlightColor : Theme.primaryColor
                 anchors.verticalCenter: parent.verticalCenter
                 x: Theme.paddingLarge
