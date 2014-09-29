@@ -65,5 +65,21 @@
         <source>source error</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Stop updating</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start updating</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>position update interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

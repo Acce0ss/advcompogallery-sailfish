@@ -5,6 +5,12 @@ import QtPositioning 5.2
 Page {
   id: root
 
+  PositionSource {
+    id: positionSrc
+    updateInterval: intervalSlider.value //päivitysväli
+    active: false
+  }
+
   Column {
     width: parent.width
     PageHeader {
@@ -50,13 +56,32 @@ Page {
       wrapMode: Text.WordWrap
       text: qsTr("You're at %1 latitude, %2 longitude")
       .arg(positionSrc.position.coordinate.latitude)
-      .arg(positionSrc.position.coordinate.longitude)
+      .arg(positionSrc.position.coordinate.longitude);
     }
-
-    PositionSource {
-      id: positionSrc
-      updateInterval: 1000 //päivitysväli
-      active: true //aloita päivittäminen heti
+    Button {
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: positionSrc.active ? qsTr("Stop updating") : qsTr("Start updating")
+        onClicked: {
+          if(positionSrc.active)
+          {
+            positionSrc.stop();
+          }
+          else
+          {
+            positionSrc.start();
+          }
+        }
     }
+      Slider {
+        x: Theme.paddingLarge
+        width: parent.width-2*Theme.paddingLarge
+        id: intervalSlider
+        label: qsTr("position update interval")
+        minimumValue: 500
+        maximumValue: 5000
+        stepSize: 1
+        value: 2500
+        valueText: qsTr("%1 ms").arg(value)
+      }
   }
 }
