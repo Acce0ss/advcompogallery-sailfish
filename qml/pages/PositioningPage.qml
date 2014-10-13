@@ -8,7 +8,7 @@ Page {
   PositionSource {
     id: positionSrc
     updateInterval: intervalSlider.value //päivitysväli
-    active: false
+    active: activationSwitch.checked
   }
 
   Column {
@@ -18,7 +18,30 @@ Page {
     }
 
     SectionHeader {
-      text: qsTr("Available position sources")
+      text: qsTr("Controls")
+    }
+
+    TextSwitch {
+      id: activationSwitch
+      text: qsTr("Updating")
+      anchors.horizontalCenter: parent.horizontalCenter
+      checked: false
+    }
+
+    Slider {
+      x: Theme.paddingLarge
+      width: parent.width-2*Theme.paddingLarge
+      id: intervalSlider
+      label: qsTr("position update interval")
+      minimumValue: 500
+      maximumValue: 5000
+      stepSize: 1
+      value: 2500
+      valueText: qsTr("%1 ms").arg(value)
+    }
+
+    SectionHeader {
+      text: qsTr("Indicators")
     }
 
     Label {
@@ -58,30 +81,7 @@ Page {
       .arg(positionSrc.position.coordinate.latitude)
       .arg(positionSrc.position.coordinate.longitude);
     }
-    Button {
-        anchors.horizontalCenter: parent.horizontalCenter
-        text: positionSrc.active ? qsTr("Stop updating") : qsTr("Start updating")
-        onClicked: {
-          if(positionSrc.active)
-          {
-            positionSrc.stop();
-          }
-          else
-          {
-            positionSrc.start();
-          }
-        }
-    }
-      Slider {
-        x: Theme.paddingLarge
-        width: parent.width-2*Theme.paddingLarge
-        id: intervalSlider
-        label: qsTr("position update interval")
-        minimumValue: 500
-        maximumValue: 5000
-        stepSize: 1
-        value: 2500
-        valueText: qsTr("%1 ms").arg(value)
-      }
+
+
   }
 }

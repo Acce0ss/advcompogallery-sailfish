@@ -28,7 +28,14 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/cover/CoverPage.qml \
     qml/pages/MainPage.qml \
     qml/pages/PositioningPage.qml \
-    translations/harbour-advcompogallery-fi.ts
+    translations/harbour-advcompogallery-fi.ts \
+    qml/pages/AccelerationPage.qml \
+    qml/pages/ProximityPage.qml \
+    qml/pages/TapsPage.qml \
+    qml/pages/TemplatePage.qml \
+    qml/pages/GyroscopePage.qml \
+    qml/pages/CompassPage.qml \
+    qml/pages/SensorListPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

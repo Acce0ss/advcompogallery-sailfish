@@ -36,42 +36,91 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    id: mainPage
+  id: mainPage
 
-    ListModel {
-        id: pagesModel
+  ListModel {
+    id: pagesModel
 
-        ListElement {
-            page: "PositioningPage.qml"
-            title: QT_TR_NOOP("Positioning")
-            subtitle: QT_TR_NOOP("Getting GPS coordinates etc.")
-            section: QT_TR_NOOP("Sensors and measurement")
-        }
+    ListElement {
+      page: "SensorListPage.qml"
+      title: QT_TR_NOOP("Sensor list")
+      subtitle: QT_TR_NOOP("Shows available sensors")
+      section: QT_TR_NOOP("Sensors and measurement")
     }
-    SilicaListView {
-        id: listView
-        anchors.fill: parent
-        model: pagesModel
-        header: PageHeader { title: qsTr("Components") }
-        section {
-            property: 'section'
-            delegate: SectionHeader {
-              text: qsTr(section)
-            }
-        }
-        delegate: BackgroundItem {
-            width: listView.width
-            Label {
-                id: firstName
-                text: qsTr(model.title)
-                color: highlighted ? Theme.highlightColor : Theme.primaryColor
-                anchors.verticalCenter: parent.verticalCenter
-                x: Theme.paddingLarge
-            }
-            onClicked: pageStack.push(Qt.resolvedUrl(page))
-        }
-        VerticalScrollDecorator {}
+
+    ListElement {
+      page: "PositioningPage.qml"
+      title: QT_TR_NOOP("Positioning")
+      subtitle: QT_TR_NOOP("Getting GPS coordinates etc.")
+      section: QT_TR_NOOP("Sensors and measurement")
     }
+    ListElement {
+      page: "AccelerationPage.qml"
+      title: QT_TR_NOOP("Accelerometer")
+      subtitle: QT_TR_NOOP("Getting various acceleration data")
+      section: QT_TR_NOOP("Sensors and measurement")
+    }
+
+    ListElement {
+      page: "GyroscopePage.qml"
+      title: QT_TR_NOOP("Gyroscope")
+      subtitle: QT_TR_NOOP("Getting various acceleration data")
+      section: QT_TR_NOOP("Sensors and measurement")
+    }
+
+    ListElement {
+      page: "ProximityPage.qml"
+      title: QT_TR_NOOP("Proximity")
+      subtitle: QT_TR_NOOP("Sensing when something is close")
+      section: QT_TR_NOOP("Sensors and measurement")
+    }
+
+    // Doesn't seem to work yet, gives timestamp from year 4147..
+//    ListElement {
+//      page: "TapsPage.qml"
+//      title: QT_TR_NOOP("Taps")
+//      subtitle: QT_TR_NOOP("Sensing tapping")
+//      section: QT_TR_NOOP("Sensors and measurement")
+//    }
+
+    ListElement {
+      page: "CameraPage.qml"
+      title: QT_TR_NOOP("Camera")
+      subtitle: QT_TR_NOOP("Viewfinder and saving an image")
+      section: QT_TR_NOOP("Multimedia")
+    }
+
+    //        ListElement {
+    //            page: "Page.qml"
+    //            title: QT_TR_NOOP("")
+    //            subtitle: QT_TR_NOOP("")
+    //            section: QT_TR_NOOP("")
+    //        }
+  }
+  SilicaListView {
+    id: listView
+    anchors.fill: parent
+    model: pagesModel
+    header: PageHeader { title: qsTr("Components") }
+    section {
+      property: 'section'
+      delegate: SectionHeader {
+        text: qsTr(section)
+      }
+    }
+    delegate: BackgroundItem {
+      width: listView.width
+      Label {
+        id: firstName
+        text: qsTr(model.title)
+        color: highlighted ? Theme.highlightColor : Theme.primaryColor
+        anchors.verticalCenter: parent.verticalCenter
+        x: Theme.paddingLarge
+      }
+      onClicked: pageStack.push(Qt.resolvedUrl(page))
+    }
+    VerticalScrollDecorator {}
+  }
 }
 
 
