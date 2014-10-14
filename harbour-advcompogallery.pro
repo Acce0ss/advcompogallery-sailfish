@@ -35,7 +35,8 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/pages/TemplatePage.qml \
     qml/pages/GyroscopePage.qml \
     qml/pages/CompassPage.qml \
-    qml/pages/SensorListPage.qml
+    qml/pages/SensorListPage.qml \
+    qml/components/CircleIndicator.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

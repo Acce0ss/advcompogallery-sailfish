@@ -1,25 +1,71 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QtSensors 5.0
+import QtSensors 5.1
+
+import "../components"
 
 Page {
   id: root
 
+  Compass {
+    id: sensor
+    alwaysOn: true
+    active: activationSwitch.checked
+    dataRate: 25
+
+
+    property int angle: reading != null ? reading.azimuth : 0
+    property real accuracy: reading != null ? reading.calibrationLevel : 0
+  }
+
   Column {
+
     width: parent.width
     PageHeader {
-      title: qsTr("Accelerometer")
+      title: qsTr("Compass")
     }
 
     SectionHeader {
-      text: qsTr("Available position sources")
+      text: qsTr("Controls")
+    }
+
+    TextSwitch {
+      id: activationSwitch
+      text: qsTr("Running")
+      anchors.horizontalCenter: parent.horizontalCenter
+      checked: false
+    }
+
+    SectionHeader {
+      text: qsTr("Indicators")
     }
 
     Label {
-      x: Theme.paddingLarge
-      width: parent.width-2*Theme.paddingLarge
       wrapMode: Text.Wrap
-      text: qsTr("Used positioning method: %1").arg(methodName)
+      text: qsTr("Angle: %1").arg(sensor.angle)
     }
+    ProgressBar {
+      width: parent.width
+
+      maximumValue: 1
+      minimumValue: 0
+      label: qsTr("calibration level")
+      valueText: value
+      value: sensor.accuracy
+    }
+
+  }
+  Item {
+    anchors.bottom: root.bottom
+    anchors.left: root.left
+    width: parent.width
+    height: 500
+
+    CircleIndicator {
+      anchors.centerIn: parent
+      value: sensor.angle
+      maxValue: 360
+    }
+
   }
 }

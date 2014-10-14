@@ -39,15 +39,27 @@
 <context>
     <name>CompassPage</name>
     <message>
-        <source>Accelerometer</source>
+        <source>Compass</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Available position sources</source>
+        <source>Controls</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Used positioning method: %1</source>
+        <source>Running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indicators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>calibration level</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -149,6 +161,14 @@
     </message>
     <message>
         <source>Gyroscope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading the values from E-compass</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

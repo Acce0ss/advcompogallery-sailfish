@@ -54,6 +54,14 @@ Page {
       subtitle: QT_TR_NOOP("Getting GPS coordinates etc.")
       section: QT_TR_NOOP("Sensors and measurement")
     }
+
+    ListElement {
+      page: "CompassPage.qml"
+      title: QT_TR_NOOP("Compass")
+      subtitle: QT_TR_NOOP("Reading the values from E-compass")
+      section: QT_TR_NOOP("Sensors and measurement")
+    }
+
     ListElement {
       page: "AccelerationPage.qml"
       title: QT_TR_NOOP("Accelerometer")
