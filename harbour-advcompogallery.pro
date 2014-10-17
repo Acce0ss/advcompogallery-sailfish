@@ -14,7 +14,10 @@ TARGET = harbour-advcompogallery
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-advcompogallery.cpp
+QT += multimedia
+
+SOURCES += src/harbour-advcompogallery.cpp \
+    src/cameraselector.cpp
 
 OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/cover/CoverPage.qml \
@@ -36,11 +39,16 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/pages/GyroscopePage.qml \
     qml/pages/CompassPage.qml \
     qml/pages/SensorListPage.qml \
-    qml/components/CircleIndicator.qml
+    qml/components/CircleIndicator.qml \
+    qml/pages/CameraPage.qml \
+    qml/pages/PhotoPreviewPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 CODECFORTR = UTF-8
 TRANSLATIONS += translations/harbour-advcompogallery-fi.ts
+
+HEADERS += \
+    src/cameraselector.h
 

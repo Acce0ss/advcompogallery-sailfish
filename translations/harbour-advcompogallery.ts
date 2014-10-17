@@ -37,6 +37,57 @@
     </message>
 </context>
 <context>
+    <name>CameraPage</name>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Capture</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indicators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Capture error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image save path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Primary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secondary</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CompassPage</name>
     <message>
         <source>Compass</source>
@@ -169,6 +220,13 @@
     </message>
     <message>
         <source>Reading the values from E-compass</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PhotoPreviewPage</name>
+    <message>
+        <source>Photo</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
