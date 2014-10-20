@@ -25,7 +25,7 @@ Page {
       id: activationSwitch
       text: qsTr("Updating")
       anchors.horizontalCenter: parent.horizontalCenter
-      checked: false
+      checked: true
     }
 
     Slider {

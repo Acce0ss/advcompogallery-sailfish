@@ -33,7 +33,7 @@ Page {
       id: activationSwitch
       text: qsTr("Running")
       anchors.horizontalCenter: parent.horizontalCenter
-      checked: false
+      checked: true
     }
 
     SectionHeader {

@@ -29,7 +29,7 @@ Page {
       id: activationSwitch
       text: qsTr("Detecting proximity")
       anchors.horizontalCenter: parent.horizontalCenter
-      checked: false
+      checked: true
     }
 
     SectionHeader {
@@ -49,7 +49,7 @@ Page {
       width: 10*Theme.paddingLarge
       height: width
 
-      dimmed: sensor.reading != null ? sensor.reading.near : false
+      dimmed: sensor.reading != null ? sensor.reading.near : true
       falloffRadius: dimmed ? 0.15 : 0.25
       cache: false
     }

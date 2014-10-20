@@ -41,7 +41,9 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/pages/SensorListPage.qml \
     qml/components/CircleIndicator.qml \
     qml/pages/CameraPage.qml \
-    qml/pages/PhotoPreviewPage.qml
+    qml/pages/PhotoPreviewPage.qml \
+    qml/pages/NotificationsPage.qml \
+    qml/pages/DBusPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

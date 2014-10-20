@@ -83,6 +83,7 @@ Page {
       section: QT_TR_NOOP("Sensors and measurement")
     }
 
+
     // Doesn't seem to work yet, gives timestamp from year 4147..
 //    ListElement {
 //      page: "TapsPage.qml"
@@ -96,6 +97,19 @@ Page {
       title: QT_TR_NOOP("Camera")
       subtitle: QT_TR_NOOP("Viewfinder and saving an image")
       section: QT_TR_NOOP("Multimedia")
+    }
+
+    ListElement {
+      page: "NotificationsPage.qml"
+      title: QT_TR_NOOP("Notifications")
+      subtitle: QT_TR_NOOP("Creating text notifications")
+      section: QT_TR_NOOP("Nemo and system APIs")
+    }
+    ListElement {
+      page: "DBusPage.qml"
+      title: QT_TR_NOOP("DBus in general")
+      subtitle: QT_TR_NOOP("Using DBus calls from QML")
+      section: QT_TR_NOOP("Nemo and system APIs")
     }
 
     //        ListElement {

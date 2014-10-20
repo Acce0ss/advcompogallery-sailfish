@@ -131,6 +131,33 @@
     </message>
 </context>
 <context>
+    <name>DBusPage</name>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open SMS window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number for SMS window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content for the SMS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DBus sending</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GyroscopePage</name>
     <message>
         <source>Available position sources</source>
@@ -237,6 +264,77 @@
     </message>
     <message>
         <source>Reading the values from E-compass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creating text notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nemo and system APIs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DBus in general</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using DBus calls from QML</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NotificationsPage</name>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publish notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary of the notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create the popup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary for the popup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content of the notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content of the popup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category of the notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of notification items</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
