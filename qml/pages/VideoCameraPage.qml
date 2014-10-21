@@ -19,28 +19,22 @@ Page {
   Camera {
     id: camera
 
-    captureMode: Camera.CaptureStillImage
+    captureMode: Camera.CaptureVideo
 
     focus {
       focusMode: Camera.FocusMacro
       focusPointMode: Camera.FocusPointCustom
-      //customFocusPoint: Qt.point(0.2, 0.2) // Focus relative to top-left corner
     }
 
-    imageCapture {
-
+    videoRecorder {
       resolution: "640x480"
+      frameRate: 15
 
-      //Not working:
-      onImageCaptured: {
-        console.log("moi")
-      }
+      mediaContainer: "mp4"
+      outputLocation: savePathInput.text
 
-      onImageSaved: {
-        var source = savePathInput.text; //copy with current filename to prevent binding
-        pageStack.push("PhotoPreviewPage.qml", {source: source}, PageStackAction.Animated);
+      onRecorderStatusChanged:{
 
-        root.count++;
       }
     }
   }
@@ -57,7 +51,7 @@ Page {
       width: parent.width
 
       PageHeader {
-        title: qsTr("Camera")
+        title: qsTr("Video Camera")
       }
 
       SectionHeader {
@@ -69,7 +63,7 @@ Page {
 
         width: parent.width-2*Theme.paddingLarge
 
-        text: StandardPaths.data + "/test" + root.count + ".jpg";
+        text: StandardPaths.data + "/test" + root.count + ".mp4";
         label: qsTr("Image save path")
         placeholderText: StandardPaths.data + "/"
 
@@ -112,40 +106,58 @@ Page {
         }
       }
 
-//      TextSwitch {
-//        id: portaitSwitch
-//        text: qsTr("Save as portrait")
-//        anchors.horizontalCenter: parent.horizontalCenter
-//        checked: true
-//      }
-//      TextSwitch {
-//        id: cameraSwitch
-//        text: qsTr("Use primary camera")
-//        anchors.horizontalCenter: parent.horizontalCenter
-//        checked: true
-//      }
-
       Button {
         id: captureButton
-        text: qsTr("Capture")
+        text: camera.videoRecorder.recorderState == CameraRecorder.StoppedState ?
+                qsTr("Start recording") : qsTr("Stop recording")
         anchors.horizontalCenter: parent.horizontalCenter
 
-        enabled: camera.imageCapture.ready
+        enabled: camera.cameraState == Camera.ActiveState
 
         onClicked: {
 
-          camera.imageCapture.captureToLocation(savePathInput.text);
-          //invokes imageSaved signal when ready
+          if(camera.videoRecorder.recorderState == CameraRecorder.StoppedState)
+          {
+            camera.videoRecorder.record();
+          }
+          else
+          {
+            camera.videoRecorder.stop();
+          }
+        }
+      }
+
+      Button {
+        id: pauseButton
+        text: camera.videoRecorder.recorderStatus == CameraRecorder.PausedStatus ?
+                qsTr("Pause recording") : qsTr("Continue recording")
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        enabled: camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus
+
+        onClicked: {
+
+          if(camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
+          {
+            camera.videoRecorder.record();
+          }
+          else
+          {
+            camera.videoRecorder.stop();
+          }
         }
       }
 
       SectionHeader {
         text: qsTr("Indicators")
       }
+
       BusyIndicator {
         anchors.horizontalCenter: parent.horizontalCenter
         size: BusyIndicatorSize.Medium
-        running: camera.availability == Camera.Busy
+        running: camera.availability == Camera.Busy ||
+                 camera.videoRecorder.recorderStatus == CameraRecorder.LoadingStatus ||
+                 camera.videoRecorder.recorderStatus == CameraRecorder.FinalizingStatus
       }
 
       Rectangle {
@@ -191,6 +203,17 @@ Page {
         x: Theme.paddingLarge
         width: parent.width-2*Theme.paddingLarge
         wrapMode: Text.Wrap
+        function simpleTimeString(duration)
+        {
+          var time = new Date(duration);
+          return time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        }
+        text: qsTr("Length of video: %1").arg(simpleTimeString(camera.videoRecorder.duration))
+      }
+      Label {
+        x: Theme.paddingLarge
+        width: parent.width-2*Theme.paddingLarge
+        wrapMode: Text.Wrap
         text: qsTr("Error: %1").arg(camera.errorString == "" ? qsTr("No errors") : camera.errorString)
       }
       Label {
@@ -198,7 +221,7 @@ Page {
         width: parent.width-2*Theme.paddingLarge
         wrapMode: Text.Wrap
         text: qsTr("Capture error: %1")
-        .arg(camera.imageCapture.errorString == "" ? qsTr("No errors") : camera.imageCapture.errorString)
+        .arg(camera.videoRecorder.errorString == "" ? qsTr("No errors") : camera.videoRecorder.errorString)
       }
     }
   }

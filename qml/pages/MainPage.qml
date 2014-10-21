@@ -100,14 +100,35 @@ Page {
     }
 
     ListElement {
+      page: "VideoCameraPage.qml"
+      title: QT_TR_NOOP("Video Camera")
+      subtitle: QT_TR_NOOP("Viewfinder and saving a video")
+      section: QT_TR_NOOP("Multimedia")
+    }
+
+    ListElement {
       page: "NotificationsPage.qml"
       title: QT_TR_NOOP("Notifications")
       subtitle: QT_TR_NOOP("Creating text notifications")
       section: QT_TR_NOOP("Nemo and system APIs")
     }
     ListElement {
-      page: "DBusPage.qml"
-      title: QT_TR_NOOP("DBus in general")
+      page: "DBusSendPage.qml"
+      title: QT_TR_NOOP("Sending DBus requests")
+      subtitle: QT_TR_NOOP("Using DBus calls from QML")
+      section: QT_TR_NOOP("Nemo and system APIs")
+    }
+
+    ListElement {
+      page: "DBusReceivePage.qml"
+      title: QT_TR_NOOP("Receiving the reply from DBus")
+      subtitle: QT_TR_NOOP("Using DBus calls from QML")
+      section: QT_TR_NOOP("Nemo and system APIs")
+    }
+
+    ListElement {
+      page: "DBusListenPage.qml"
+      title: QT_TR_NOOP("Listening to a DBus signal")
       subtitle: QT_TR_NOOP("Using DBus calls from QML")
       section: QT_TR_NOOP("Nemo and system APIs")
     }

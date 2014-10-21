@@ -131,7 +131,69 @@
     </message>
 </context>
 <context>
-    <name>DBusPage</name>
+    <name>DBusListenPage</name>
+    <message>
+        <source>Indicators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try to change profile now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>changed to different: %1&lt;br&gt;active: %2&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listening signals</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DBusReceivePage</name>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DBus service (destination)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DBus interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DBus object path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>method name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DBus receiving</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DBusSendPage</name>
+    <message>
+        <source>DBus sending</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Controls</source>
         <translation type="unfinished"></translation>
@@ -150,10 +212,6 @@
     </message>
     <message>
         <source>Content for the SMS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>DBus sending</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -279,11 +337,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>DBus in general</source>
+        <source>Using DBus calls from QML</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Using DBus calls from QML</source>
+        <source>Sending DBus requests</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Receiving the reply from DBus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listening to a DBus signal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video Camera</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Viewfinder and saving a video</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -335,6 +409,10 @@
     </message>
     <message>
         <source>Number of notification items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create persistent notification</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -533,6 +611,88 @@
     </message>
     <message>
         <source>Updating</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VideoCameraPage</name>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image save path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Primary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secondary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indicators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length of video: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Capture error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video Camera</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VideoPreviewPage</name>
+    <message>
+        <source>Video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

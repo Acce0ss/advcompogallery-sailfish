@@ -17,6 +17,7 @@ Page {
     Image {
       x: Theme.paddingLarge
       width: parent.width - 2*Theme.paddingLarge
+      rotation: 90
 
       fillMode: Image.PreserveAspectFit
 

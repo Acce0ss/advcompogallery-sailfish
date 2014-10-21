@@ -8,8 +8,8 @@ Page {
   Notification {
     id: notification
     category: notificationCategory.text
-    summary: notificationSummary.text
-    body: notificationContent.text
+    summary: persistentSwitch.checked ? notificationSummary.text : ""
+    body: persistentSwitch.checked ? notificationContent.text : ""
     previewBody: popupSwitch.checked ? notificationPreviewContent.text : ""
     previewSummary: popupSwitch.checked ? notificationPreviewSummary.text : ""
     itemCount: numberOfItems.value
@@ -59,7 +59,12 @@ Page {
       TextSwitch {
         id: popupSwitch
         text: qsTr("Create the popup")
-        checked: false
+        checked: true
+      }
+      TextSwitch {
+        id: persistentSwitch
+        text: qsTr("Create persistent notification")
+        checked: true
       }
 
       SectionHeader {
@@ -76,35 +81,35 @@ Page {
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
         text: "x-nemo.email"
-        placeholderText: qsTr("Category of the notification")
+        placeholderText: label
         label: qsTr("Category of the notification")
       }
       TextField {
         id: notificationCategory
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
-        placeholderText: qsTr("Summary of the notification")
+        placeholderText: label
         label: qsTr("Summary of the notification")
       }
       TextField {
         id: notificationPreviewSummary
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
-        placeholderText: qsTr("Summary for the popup")
+        placeholderText: label
         label: qsTr("Summary for the popup")
       }
       TextField {
         id: notificationContent
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
-        placeholderText: qsTr("Content of the notification")
+        placeholderText: label
         label: qsTr("Content of the notification")
       }
       TextField {
         id: notificationPreviewContent
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
-        placeholderText: qsTr("Content of the popup")
+        placeholderText: label
         label: qsTr("Content of the popup")
       }
       Slider {

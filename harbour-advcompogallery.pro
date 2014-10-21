@@ -43,7 +43,11 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/pages/CameraPage.qml \
     qml/pages/PhotoPreviewPage.qml \
     qml/pages/NotificationsPage.qml \
-    qml/pages/DBusPage.qml
+    qml/pages/DBusSendPage.qml \
+    qml/pages/DBusReceivePage.qml \
+    qml/pages/DBusListenPage.qml \
+    qml/pages/VideoCameraPage.qml \
+    qml/pages/VideoPreviewPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

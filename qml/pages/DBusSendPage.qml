@@ -14,7 +14,10 @@ Page {
 
     function send()
     {
-      smsSend.call("startSMS", "array:string:\'"+smsTarget.text+"\' string:\'"+smsContent.text+"\'")
+      smsSend.typedCall("startSMS", [
+                     { 'type':'as', 'value':[smsTarget.text] },
+                     { 'type':'s', 'value':smsContent.text }
+                 ])
     }
   }
 
@@ -54,7 +57,7 @@ Page {
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
         inputMethodHints: Qt.ImhDigitsOnly
-        placeholderText: qsTr("Number for SMS window")
+        placeholderText: label
         label: qsTr("Number for SMS window")
       }
       TextField {
@@ -62,7 +65,7 @@ Page {
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
 
-        placeholderText: qsTr("Content for the SMS")
+        placeholderText: label
         label: qsTr("Content for the SMS")
       }
     }
