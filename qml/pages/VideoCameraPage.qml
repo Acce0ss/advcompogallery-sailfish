@@ -3,18 +3,13 @@ import QtMultimedia 5.0
 
 import Sailfish.Silica 1.0
 import Sailfish.Media 1.0
-import CameraSelector 1.0
+import com.jolla.camera 1.0
 
 Page {
   id: root
 
   property int count: 0
-  //property bool isPortrait: portaitSwitch.checked
-
-  CameraSelector {
-    id: selector
-    cameraObject: camera
-  }
+  property bool isPortrait: portraitSwitch.checked
 
   Camera {
     id: camera
@@ -27,16 +22,40 @@ Page {
     }
 
     videoRecorder {
-      resolution: "640x480"
-      frameRate: 15
+      resolution: extensions.viewfinderResolution
 
-      mediaContainer: "mp4"
       outputLocation: savePathInput.text
 
-      onRecorderStatusChanged:{
-
+      audioSampleRate: 48000
+      audioBitRate: 96
+      audioChannels: 1
+      audioCodec: "audio/mpeg, mpegversion=(int)4"
+      frameRate: 30
+      videoCodec: "video/x-h264"
+      mediaContainer: "video/x-matroska"
+      onRecorderStateChanged: {
+        if (camera.videoRecorder.recorderState == CameraRecorder.StoppedState) {
+          console.log("saved to: " + camera.videoRecorder.outputLocation)
+        }
       }
     }
+  }
+
+  function reload() {
+    if (root._complete) {
+      root._unload = true;
+    }
+  }
+
+  CameraExtensions {
+    id: extensions
+    camera: camera
+    device: cameraChooser.currentItem.value
+    onDeviceChanged: reload()
+    viewfinderResolution: "1280x720"
+    manufacturer: "Jolla"
+    model: "Jolla"
+    rotation: root.isPortrait ? 90 : 0
   }
 
   SilicaFlickable {
@@ -64,7 +83,7 @@ Page {
         width: parent.width-2*Theme.paddingLarge
 
         text: StandardPaths.data + "/test" + root.count + ".mp4";
-        label: qsTr("Image save path")
+        label: qsTr("Video save path")
         placeholderText: StandardPaths.data + "/"
 
       }
@@ -87,22 +106,25 @@ Page {
         }
       }
 
+      TextSwitch {
+        id: portraitSwitch
+        text: qsTr("video orientation portrait")
+        anchors.horizontalCenter: parent.horizontalCenter
+        checked: true
+      }
+
       ComboBox {
         id: cameraChooser
         width: parent.width
         menu: ContextMenu {
           MenuItem {
             text: qsTr("Primary")
+            property string value: "primary"
           }
           MenuItem {
             text: qsTr("Secondary")
+            property string value: "secondary"
           }
-        }
-
-        onCurrentIndexChanged: {
-          camera.stop();
-          selector.selectedCameraDevice = currentIndex;
-          camera.start();
         }
       }
 
@@ -123,27 +145,7 @@ Page {
           else
           {
             camera.videoRecorder.stop();
-          }
-        }
-      }
-
-      Button {
-        id: pauseButton
-        text: camera.videoRecorder.recorderStatus == CameraRecorder.PausedStatus ?
-                qsTr("Pause recording") : qsTr("Continue recording")
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        enabled: camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus
-
-        onClicked: {
-
-          if(camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
-          {
-            camera.videoRecorder.record();
-          }
-          else
-          {
-            camera.videoRecorder.stop();
+            root.count++;
           }
         }
       }
@@ -189,6 +191,7 @@ Page {
 
           focus: visible
           source: camera
+          fillMode: VideoOutput.PreserveAspectCrop
 
           MouseArea {
             anchors.fill: parent

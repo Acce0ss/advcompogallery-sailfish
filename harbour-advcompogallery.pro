@@ -12,12 +12,12 @@
 # The name of your application
 TARGET = harbour-advcompogallery
 
-CONFIG += sailfishapp
+CONFIG += sailfishapp link_pkgconfig
+PKGCONFIG += sailfishapp gstreamer-0.10
 
 QT += multimedia
 
-SOURCES += src/harbour-advcompogallery.cpp \
-    src/cameraselector.cpp
+SOURCES += src/harbour-advcompogallery.cpp
 
 OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/cover/CoverPage.qml \
@@ -55,6 +55,5 @@ CONFIG += sailfishapp_i18n
 CODECFORTR = UTF-8
 TRANSLATIONS += translations/harbour-advcompogallery-fi.ts
 
-HEADERS += \
-    src/cameraselector.h
+HEADERS +=
 

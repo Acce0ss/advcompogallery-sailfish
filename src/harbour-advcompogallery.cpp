@@ -15,7 +15,6 @@
 #include <QStringList>
 #include <QByteArray>
 
-#include "cameraselector.h"
 
 int main(int argc, char *argv[])
 {
@@ -24,8 +23,6 @@ int main(int argc, char *argv[])
 
     app->setApplicationName("advCompoGallery");
     app->setOrganizationName("Skrolli");
-
-    qmlRegisterType<CameraSelector>("CameraSelector", 1, 0, "CameraSelector");
 
     QDir data(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
     QDir test(QStandardPaths::writableLocation(QStandardPaths::DataLocation)+"/test");

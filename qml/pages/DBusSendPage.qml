@@ -1,16 +1,16 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import org.nemomobile.dbus 1.0
+import org.nemomobile.dbus 2.0
 
 Page {
   id: root
 
   DBusInterface {
     id: smsSend
-    destination: 'org.nemomobile.qmlmessages' //rename property to service, when 2.0 ready
+    service: 'org.nemomobile.qmlmessages' //rename property to service, when 2.0 ready
     iface: 'org.nemomobile.qmlmessages'
     path: '/'
-    busType: DBusInterface.SessionBus
+    bus: DBus.SessionBus
 
     function send()
     {

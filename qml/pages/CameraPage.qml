@@ -3,23 +3,25 @@ import QtMultimedia 5.0
 
 import Sailfish.Silica 1.0
 import Sailfish.Media 1.0
-import CameraSelector 1.0
+import com.jolla.camera 1.0
 
 Page {
   id: root
 
   property int count: 0
-  //property bool isPortrait: portaitSwitch.checked
+  property bool isPortrait: portraitSwitch.checked
 
-  CameraSelector {
-    id: selector
-    cameraObject: camera
-  }
+  property bool _complete
+  property bool _unload
 
   Camera {
     id: camera
 
     captureMode: Camera.CaptureStillImage
+
+    cameraState: root._complete && !root._unload
+                 ? Camera.ActiveState
+                 : Camera.UnloadedState
 
     focus {
       focusMode: Camera.FocusMacro
@@ -29,7 +31,7 @@ Page {
 
     imageCapture {
 
-      resolution: "640x480"
+      resolution: extensions.viewfinderResolution
 
       //Not working:
       onImageCaptured: {
@@ -43,6 +45,23 @@ Page {
         root.count++;
       }
     }
+  }
+
+  function reload() {
+    if (root._complete) {
+      root._unload = true;
+    }
+  }
+
+  CameraExtensions {
+    id: extensions
+    camera: camera
+    device: cameraChooser.currentItem.value
+    onDeviceChanged: reload()
+    viewfinderResolution: "1280x720"
+    manufacturer: "Jolla"
+    model: "Jolla"
+    rotation: root.isPortrait ? 90 : 0
   }
 
   SilicaFlickable {
@@ -84,31 +103,32 @@ Page {
 
           if(camera.cameraState == Camera.ActiveState)
           {
-            camera.stop();
+            camera.cameraState = Camera.UnloadedState;
           }
-          else if(camera.cameraState == Camera.LoadedState)
+          else if(camera.cameraState == Camera.UnloadedState)
           {
-            camera.start();
+            camera.cameraState = Camera.ActiveState;
           }
         }
       }
-
+      TextSwitch {
+        id: portraitSwitch
+        text: qsTr("picture orientation portrait")
+        anchors.horizontalCenter: parent.horizontalCenter
+        checked: true
+      }
       ComboBox {
         id: cameraChooser
         width: parent.width
         menu: ContextMenu {
           MenuItem {
             text: qsTr("Primary")
+            property string value: "primary"
           }
           MenuItem {
             text: qsTr("Secondary")
+            property string value: "secondary"
           }
-        }
-
-        onCurrentIndexChanged: {
-          camera.stop();
-          selector.selectedCameraDevice = currentIndex;
-          camera.start();
         }
       }
 
@@ -145,7 +165,7 @@ Page {
       BusyIndicator {
         anchors.horizontalCenter: parent.horizontalCenter
         size: BusyIndicatorSize.Medium
-        running: camera.availability == Camera.Busy
+        running: !camera.imageCapture.ready
       }
 
       Rectangle {
@@ -170,13 +190,14 @@ Page {
           ColorAnimation { to: border.color; duration: 200 }
         }
 
-        GStreamerVideoOutput {
+        VideoOutput {
           id: output
 
           anchors.fill: parent
 
           focus: visible
           source: camera
+          fillMode: VideoOutput.PreserveAspectCrop
 
           MouseArea {
             anchors.fill: parent
@@ -201,5 +222,18 @@ Page {
         .arg(camera.imageCapture.errorString == "" ? qsTr("No errors") : camera.imageCapture.errorString)
       }
     }
+  }
+
+  Timer {
+    id: reloadTimer
+    interval: 100
+    running: root._unload && camera.cameraStatus == Camera.UnloadedStatus
+    onTriggered: {
+      root._unload = false
+    }
+  }
+
+  Component.onCompleted: {
+    _complete = true;
   }
 }

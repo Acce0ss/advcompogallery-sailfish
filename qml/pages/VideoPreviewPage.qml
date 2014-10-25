@@ -55,7 +55,7 @@ Page {
 
     }
 
-    GStreamerVideoOutput {
+    VideoOutput {
       x: Theme.paddingLarge
       width: parent.width - 2*Theme.paddingLarge
       height: 500

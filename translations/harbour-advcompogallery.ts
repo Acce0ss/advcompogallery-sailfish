@@ -86,6 +86,10 @@
         <source>Secondary</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>picture orientation portrait</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CompassPage</name>
@@ -136,11 +140,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>changed to different: %1&lt;br&gt;active: %2&lt;br&gt;</source>
+        <source>Listening signals</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Listening signals</source>
+        <source>changed to different: %1&lt;br&gt;active: %2&lt;br&gt;profile: %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -572,10 +576,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Image save path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Camera active</source>
         <translation type="unfinished"></translation>
     </message>
@@ -593,14 +593,6 @@
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pause recording</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Continue recording</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -625,6 +617,14 @@
     </message>
     <message>
         <source>Video Camera</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video save path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>video orientation portrait</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

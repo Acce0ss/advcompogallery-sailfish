@@ -1,16 +1,16 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import org.nemomobile.dbus 1.0
+import org.nemomobile.dbus 2.0
 
 Page {
   id: root
 
   DBusInterface {
     id: dbus
-    destination: "com.nokia.profiled" //rename property to service, when 2.0 ready
+    service: "com.nokia.profiled" //rename property to service, when 2.0 ready
     iface: "com.nokia.profiled"
     path: "/com/nokia/profiled"
-    busType: DBusInterface.SessionBus
+    bus: DBus.SessionBus
 
     signalsEnabled: true
 
@@ -18,7 +18,8 @@ Page {
     function profile_changed(arg1, arg2, arg3)
     {
 
-      outputField.text = qsTr("changed to different: %1<br>active: %2<br>")
+      outputField.text = qsTr("changed to different: %1<br>active: %2<br>profile: %3")
+      .arg(arg1).arg(arg2).arg(arg3)
     }
   }
 

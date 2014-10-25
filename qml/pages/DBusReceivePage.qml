@@ -1,22 +1,21 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import org.nemomobile.dbus 1.0
+import org.nemomobile.dbus 2.0
 
 Page {
   id: root
 
   DBusInterface {
     id: dbus
-    destination: serviceInput.text //rename property to service, when 2.0 ready
+    service: serviceInput.text //rename property to service, when 2.0 ready
     iface: interfaceInput.text
     path: pathInput.text
-    busType: DBusInterface.SessionBus
+    bus: DBus.SessionBus
 
     function send()
     {
-      dbus.typedCallWithReturn(methodInput.text, [], function (result) {
+      dbus.typedCall(methodInput.text, [], function (result) {
         // This will be called when the result is available
-        console.log('Got profile: ' + result);
         outputField.text = result;
     });
     }
