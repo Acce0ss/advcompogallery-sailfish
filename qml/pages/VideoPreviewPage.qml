@@ -1,7 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.0
-import Sailfish.Media 1.0
 
 Page {
   id: root
@@ -46,7 +45,7 @@ Page {
     Slider {
       enabled: mediaPlayer.seekable
       minimumValue: 0
-      maximumValue: mediaPlayer.duration
+      maximumValue: mediaPlayer.duration+1
       stepSize: (1.0/15.0)*1000
       onValueChanged: {
         var time = new Date(value);
@@ -64,10 +63,6 @@ Page {
         id: mediaPlayer
       }
       visible: mediaPlayer.status >= MediaPlayer.Loaded && mediaPlayer.status <= MediaPlayer.EndOfMedia
-
-      ScreenBlank {
-        suspend: mediaPlayer.playbackState == MediaPlayer.PlayingState
-      }
     }
   }
 }

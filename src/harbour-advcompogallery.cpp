@@ -15,6 +15,9 @@
 #include <QStringList>
 #include <QByteArray>
 
+#include <gst/gst.h>
+#include <gst/gstpreset.h>
+
 
 int main(int argc, char *argv[])
 {
@@ -34,6 +37,9 @@ int main(int argc, char *argv[])
     {
         test.mkpath(test.path());
     }
+
+    gst_init(0, 0);
+    gst_preset_set_app_dir("/usr/share/harbour-advcompogallery/presets");
 
     QTranslator appTranslator;
     appTranslator.load("harbour-advcompogallery-" + QLocale::system().name(),

@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtMultimedia 5.0
 
 import Sailfish.Silica 1.0
-import Sailfish.Media 1.0
+
 import com.jolla.camera 1.0
 
 Page {
@@ -11,10 +11,17 @@ Page {
   property int count: 0
   property bool isPortrait: portraitSwitch.checked
 
+  property bool _complete
+  property bool _unload
+
   Camera {
     id: camera
 
     captureMode: Camera.CaptureVideo
+
+    cameraState: root._complete && !root._unload
+                 ? Camera.ActiveState
+                 : Camera.UnloadedState
 
     focus {
       focusMode: Camera.FocusMacro
@@ -36,6 +43,8 @@ Page {
       onRecorderStateChanged: {
         if (camera.videoRecorder.recorderState == CameraRecorder.StoppedState) {
           console.log("saved to: " + camera.videoRecorder.outputLocation)
+          var source = savePathInput.text; //copy with current filename to prevent binding
+          pageStack.push("VideoPreviewPage.qml", {source: source}, PageStackAction.Animated);
         }
       }
     }
@@ -50,7 +59,7 @@ Page {
   CameraExtensions {
     id: extensions
     camera: camera
-    device: cameraChooser.currentItem.value
+    device: "primary"
     onDeviceChanged: reload()
     viewfinderResolution: "1280x720"
     manufacturer: "Jolla"
@@ -97,11 +106,11 @@ Page {
 
           if(camera.cameraState == Camera.ActiveState)
           {
-            camera.stop();
+            camera.cameraState = Camera.UnloadedState;
           }
-          else if(camera.cameraState == Camera.LoadedState)
+          else if(camera.cameraState == Camera.UnloadedState)
           {
-            camera.start();
+            camera.cameraState = Camera.ActiveState;
           }
         }
       }
@@ -126,6 +135,9 @@ Page {
             property string value: "secondary"
           }
         }
+        onCurrentIndexChanged: {
+          extensions.device = currentItem.value;
+        }
       }
 
       Button {
@@ -141,6 +153,7 @@ Page {
           if(camera.videoRecorder.recorderState == CameraRecorder.StoppedState)
           {
             camera.videoRecorder.record();
+            durationLabel.startTime = new Date();
           }
           else
           {
@@ -184,7 +197,7 @@ Page {
           ColorAnimation { to: border.color; duration: 200 }
         }
 
-        GStreamerVideoOutput {
+        VideoOutput {
           id: output
 
           anchors.fill: parent
@@ -203,13 +216,18 @@ Page {
         }
       }
       Label {
+        id: durationLabel
         x: Theme.paddingLarge
         width: parent.width-2*Theme.paddingLarge
         wrapMode: Text.Wrap
+        property date startTime: new Date()
         function simpleTimeString(duration)
         {
-          var time = new Date(duration);
-          return time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+          console.log(duration)
+          var time = new Date((new Date()) - startTime);
+          return time.getHours() - (new Date().getHours()) + ":"
+              + time.getMinutes() + ":"
+              + time.getSeconds();
         }
         text: qsTr("Length of video: %1").arg(simpleTimeString(camera.videoRecorder.duration))
       }
@@ -226,6 +244,14 @@ Page {
         text: qsTr("Capture error: %1")
         .arg(camera.videoRecorder.errorString == "" ? qsTr("No errors") : camera.videoRecorder.errorString)
       }
+    }
+  }
+  Component.onCompleted: {
+    _complete = true;
+  }
+  Component.onDestruction: {
+    if (camera.cameraState != Camera.UnloadedState) {
+      camera.cameraState = Camera.UnloadedState
     }
   }
 }

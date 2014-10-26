@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtMultimedia 5.0
 
 import Sailfish.Silica 1.0
-import Sailfish.Media 1.0
+
 import com.jolla.camera 1.0
 
 Page {
@@ -39,6 +39,7 @@ Page {
       }
 
       onImageSaved: {
+        //camera.cameraState = Camera.UnloadedState;
         var source = savePathInput.text; //copy with current filename to prevent binding
         pageStack.push("PhotoPreviewPage.qml", {source: source}, PageStackAction.Animated);
 
@@ -56,9 +57,9 @@ Page {
   CameraExtensions {
     id: extensions
     camera: camera
-    device: cameraChooser.currentItem.value
+    device: "primary"
     onDeviceChanged: reload()
-    viewfinderResolution: "1280x720"
+    viewfinderResolution: "640x480"
     manufacturer: "Jolla"
     model: "Jolla"
     rotation: root.isPortrait ? 90 : 0
@@ -130,6 +131,10 @@ Page {
             property string value: "secondary"
           }
         }
+
+        onCurrentIndexChanged: {
+          extensions.device = currentItem.value;
+        }
       }
 
 //      TextSwitch {
@@ -184,8 +189,6 @@ Page {
                         return "white"
                       }
 
-
-
         Behavior on border.color {
           ColorAnimation { to: border.color; duration: 200 }
         }
@@ -195,6 +198,7 @@ Page {
 
           anchors.fill: parent
 
+          visible: camera.cameraState == Camera.ActiveState
           focus: visible
           source: camera
           fillMode: VideoOutput.PreserveAspectCrop
@@ -235,5 +239,10 @@ Page {
 
   Component.onCompleted: {
     _complete = true;
+  }
+  Component.onDestruction: {
+    if (camera.cameraState != Camera.UnloadedState) {
+      camera.cameraState = Camera.UnloadedState
+    }
   }
 }

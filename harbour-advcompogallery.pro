@@ -55,5 +55,10 @@ CONFIG += sailfishapp_i18n
 CODECFORTR = UTF-8
 TRANSLATIONS += translations/harbour-advcompogallery-fi.ts
 
+presets.files = presets
+presets.path = /usr/share/harbour-advcompogallery
+
+INSTALLS = presets
+
 HEADERS +=
 
