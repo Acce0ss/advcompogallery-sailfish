@@ -23,10 +23,6 @@ Page {
                  ? Camera.ActiveState
                  : Camera.UnloadedState
 
-    onCameraStateChanged: {
-      console.log("state: " + cameraState)
-    }
-
     focus {
       focusMode: Camera.FocusMacro
       focusPointMode: Camera.FocusPointCustom
@@ -46,7 +42,6 @@ Page {
       mediaContainer: "video/x-matroska"
       onRecorderStateChanged: {
         if (camera.videoRecorder.recorderState == CameraRecorder.StoppedState) {
-          camera.cameraState = Camera.UnloadedState;
           root._complete = false;
           console.log("saved to: " + camera.videoRecorder.outputLocation)
           var source = savePathInput.text; //copy with current filename to prevent binding
@@ -257,9 +252,8 @@ Page {
   Timer {
     id: reloadTimer
     interval: 100
-    running: root._unload && camera.cameraStatus == Camera.UnloadedStatus
+    running: root._unload && camera.cameraState == Camera.UnloadedState
     onTriggered: {
-      console.log("Reloaded")
       root._unload = false
     }
   }
@@ -269,15 +263,9 @@ Page {
     if(root.status == PageStatus.Active)
     {
       _complete = true;
-      console.log("what's happening?" + _complete + _unload)
       reload();
     }
   }
-
-  Component.onCompleted: {
-    _complete = true;
-  }
-
 
   Component.onDestruction: {
     if (camera.cameraState != Camera.UnloadedState) {

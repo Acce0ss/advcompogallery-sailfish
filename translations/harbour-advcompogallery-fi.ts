@@ -9,23 +9,23 @@
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source>Measuring</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitataan</translation>
     </message>
     <message>
         <source>Acceleration including gravity</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiihtyvyys painovoima huomioiden</translation>
     </message>
     <message>
         <source>along X-axis: %1&lt;br&gt;along Y-axis: %2&lt;br&gt;along Z-axis: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>x-akselin suunnassa: %1&lt;br&gt;y-akselin suunnassa: %2&lt;br&gt;z-akselin suunnassa: %3</translation>
     </message>
 </context>
 <context>
@@ -36,51 +36,51 @@
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Camera active</source>
-        <translation type="unfinished"></translation>
+        <translation>Kamera aktiivinen</translation>
     </message>
     <message>
         <source>Capture</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota kuva</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source>Error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe: %1</translation>
     </message>
     <message>
         <source>Camera</source>
-        <translation type="unfinished"></translation>
+        <translation>Kamera</translation>
     </message>
     <message>
         <source>Capture error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe kuvatessa: %1</translation>
     </message>
     <message>
         <source>No errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei virheitä</translation>
     </message>
     <message>
         <source>Image save path</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennuspolku</translation>
     </message>
     <message>
         <source>Primary</source>
-        <translation type="unfinished"></translation>
+        <translation>Takakamera</translation>
     </message>
     <message>
         <source>Secondary</source>
-        <translation type="unfinished"></translation>
+        <translation>Etukamera</translation>
     </message>
     <message>
         <source>picture orientation portrait</source>
-        <translation type="unfinished"></translation>
+        <translation>Muotokuva</translation>
     </message>
 </context>
 <context>
@@ -95,27 +95,27 @@
     </message>
     <message>
         <source>Compass</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompassi</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Running</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnissä</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source>Angle: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kulma: %1</translation>
     </message>
     <message>
         <source>calibration level</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalibrointitaso</translation>
     </message>
 </context>
 <context>
@@ -130,85 +130,85 @@
     <name>DBusListenPage</name>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Try to change profile now</source>
-        <translation type="unfinished"></translation>
+        <translation>Kokeile vaihtaa profiilia nyt</translation>
     </message>
     <message>
         <source>Listening signals</source>
-        <translation type="unfinished"></translation>
+        <translation>Signaalien kuuntelu</translation>
     </message>
     <message>
         <source>changed to different: %1&lt;br&gt;active: %2&lt;br&gt;profile: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihto eri profiiliin: %1&lt;br&gt;aktiivinen: %2&lt;br&gt;profiili: %3</translation>
     </message>
 </context>
 <context>
     <name>DBusReceivePage</name>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>DBus service (destination)</source>
-        <translation type="unfinished"></translation>
+        <translation>DBus palvelu (kohde)</translation>
     </message>
     <message>
         <source>DBus interface</source>
-        <translation type="unfinished"></translation>
+        <translation>DBus rajapinta</translation>
     </message>
     <message>
         <source>DBus object path</source>
-        <translation type="unfinished"></translation>
+        <translation>DBus olion polku</translation>
     </message>
     <message>
         <source>Send request</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä pyyntö</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisältö</translation>
     </message>
     <message>
         <source>method name</source>
-        <translation type="unfinished"></translation>
+        <translation>Metodin nimi</translation>
     </message>
     <message>
         <source>DBus receiving</source>
-        <translation type="unfinished"></translation>
+        <translation>DBus vastaanotto</translation>
     </message>
 </context>
 <context>
     <name>DBusSendPage</name>
     <message>
         <source>DBus sending</source>
-        <translation type="unfinished"></translation>
+        <translation>DBus lähetys</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Open SMS window</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa SMS ikkuna</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisältö</translation>
     </message>
     <message>
         <source>Number for SMS window</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä SMS numeroon</translation>
     </message>
     <message>
         <source>Content for the SMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Viestin sisältö</translation>
     </message>
 </context>
 <context>
@@ -223,15 +223,15 @@
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Measuring</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitataan</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source></source>
@@ -239,11 +239,11 @@
     </message>
     <message>
         <source>Rotational acceleration</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiihtyvyys kierron suhteen</translation>
     </message>
     <message>
         <source>around X-axis: %1&lt;br&gt;around Y-axis: %2&lt;br&gt;around Z-axis: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>x-akselin ympäri: %1&lt;br&gt;y-akselin ympäri: %2&lt;br&gt;z-akselin ympäri: %3</translation>
     </message>
 </context>
 <context>
@@ -266,157 +266,157 @@
     </message>
     <message>
         <source>Accelerometer</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiihtyvyysanturi</translation>
     </message>
     <message>
         <source>Getting various acceleration data</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiihtyvyysanturin lukeminen</translation>
     </message>
     <message>
         <source>Camera</source>
-        <translation type="unfinished"></translation>
+        <translation>Kamera</translation>
     </message>
     <message>
         <source>Viewfinder and saving an image</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvan esikatselu ja tallennus</translation>
     </message>
     <message>
         <source>Multimedia</source>
-        <translation type="unfinished"></translation>
+        <translation>Multimedia</translation>
     </message>
     <message>
         <source>Proximity</source>
-        <translation type="unfinished"></translation>
+        <translation>Läheisyys</translation>
     </message>
     <message>
         <source>Sensing when something is close</source>
-        <translation type="unfinished"></translation>
+        <translation>Läheisyyden havaitseminen</translation>
     </message>
     <message>
         <source>Sensor list</source>
-        <translation type="unfinished"></translation>
+        <translation>Anturiluettelo</translation>
     </message>
     <message>
         <source>Shows available sensors</source>
-        <translation type="unfinished"></translation>
+        <translation>Näyttää anturit</translation>
     </message>
     <message>
         <source>Gyroscope</source>
-        <translation type="unfinished"></translation>
+        <translation>Gyroskooppi</translation>
     </message>
     <message>
         <source>Compass</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompassi</translation>
     </message>
     <message>
         <source>Reading the values from E-compass</source>
-        <translation type="unfinished"></translation>
+        <translation>E-kompassin lukeminen</translation>
     </message>
     <message>
         <source>Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitusten luominen</translation>
     </message>
     <message>
         <source>Creating text notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitusten luominen</translation>
     </message>
     <message>
         <source>Nemo and system APIs</source>
-        <translation type="unfinished"></translation>
+        <translation>Nemon ja järjestelmän API:t</translation>
     </message>
     <message>
         <source>Using DBus calls from QML</source>
-        <translation type="unfinished"></translation>
+        <translation>DBus kutsujen käyttö QML:stä</translation>
     </message>
     <message>
         <source>Sending DBus requests</source>
-        <translation type="unfinished"></translation>
+        <translation>DBus pyyntöjen lähetys</translation>
     </message>
     <message>
         <source>Receiving the reply from DBus</source>
-        <translation type="unfinished"></translation>
+        <translation>Vastaanottaminen DBus:lta</translation>
     </message>
     <message>
         <source>Listening to a DBus signal</source>
-        <translation type="unfinished"></translation>
+        <translation>DBus signaaliin reagoiminen</translation>
     </message>
     <message>
         <source>Video Camera</source>
-        <translation type="unfinished"></translation>
+        <translation>Videokamera</translation>
     </message>
     <message>
         <source>Viewfinder and saving and playing video</source>
-        <translation type="unfinished"></translation>
+        <translation>Esikatselu ja videon tallennus</translation>
     </message>
     <message>
         <source>Sound effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Äänitehosteet</translation>
     </message>
     <message>
         <source>Using sound effects</source>
-        <translation type="unfinished"></translation>
+        <translation>Äänitehosteen käyttäminen</translation>
     </message>
 </context>
 <context>
     <name>NotificationsPage</name>
     <message>
         <source>Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitusten luominen</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Publish notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Julkaise ilmoitus</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisältö</translation>
     </message>
     <message>
         <source>Notification active</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitus aktiivinen</translation>
     </message>
     <message>
         <source>Summary of the notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoituksen yhteenveto</translation>
     </message>
     <message>
         <source>Create the popup</source>
-        <translation type="unfinished"></translation>
+        <translation>Luo popup-ilmoitus</translation>
     </message>
     <message>
         <source>Summary for the popup</source>
-        <translation type="unfinished"></translation>
+        <translation>Popup-ilmoituksen yhteenveto</translation>
     </message>
     <message>
         <source>Content of the notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoituksen sisältö</translation>
     </message>
     <message>
         <source>Content of the popup</source>
-        <translation type="unfinished"></translation>
+        <translation>Popup-ilmoituksen sisältö</translation>
     </message>
     <message>
         <source>Category of the notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoituksen kategoria</translation>
     </message>
     <message>
         <source>Number of notification items</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoituksen tapahtumien määrä</translation>
     </message>
     <message>
         <source>Create persistent notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Luo kestävä ilmoitus</translation>
     </message>
 </context>
 <context>
     <name>PhotoPreviewPage</name>
     <message>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva</translation>
     </message>
 </context>
 <context>
@@ -475,15 +475,15 @@
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Updating</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetään</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
 </context>
 <context>
@@ -498,23 +498,23 @@
     </message>
     <message>
         <source>Proximity</source>
-        <translation type="unfinished"></translation>
+        <translation>Läheisyys</translation>
     </message>
     <message>
         <source>The indicator will dim when something comes close</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisin himmenee, kun läheisyysanturi peittyy</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source>Detecting proximity</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitataan läheisyyttä</translation>
     </message>
 </context>
 <context>
@@ -528,19 +528,19 @@
     <name>SoundEffectPage</name>
     <message>
         <source>Playing a sound effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Äänitehosteen toistaminen</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Soita</translation>
     </message>
     <message>
         <source>Mute sound effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaimenna ääni</translation>
     </message>
 </context>
 <context>
@@ -555,55 +555,55 @@
     </message>
     <message>
         <source>From right</source>
-        <translation type="unfinished"></translation>
+        <translation>Oikealta</translation>
     </message>
     <message>
         <source>From up</source>
-        <translation type="unfinished"></translation>
+        <translation>Ylhäältä</translation>
     </message>
     <message>
         <source>From front</source>
-        <translation type="unfinished"></translation>
+        <translation>Edestä</translation>
     </message>
     <message>
         <source>From left</source>
-        <translation type="unfinished"></translation>
+        <translation>Vasemmalta</translation>
     </message>
     <message>
         <source>From down</source>
-        <translation type="unfinished"></translation>
+        <translation>Alhaalta</translation>
     </message>
     <message>
         <source>From back</source>
-        <translation type="unfinished"></translation>
+        <translation>Takaa</translation>
     </message>
     <message>
         <source>Tap error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napautusvirhe</translation>
     </message>
     <message>
         <source>Tapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Napautukset</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>React to tapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Reagoi napautuksiin</translation>
     </message>
     <message>
         <source>Act only on double taps</source>
-        <translation type="unfinished"></translation>
+        <translation>Reagoi vain tuplanapautuksiin</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source>Try (double) tapping from left or right side</source>
-        <translation type="unfinished"></translation>
+        <translation>Kokeile (tupla)napauttaa oikealta tai vasemmalta</translation>
     </message>
 </context>
 <context>
@@ -614,7 +614,7 @@
     </message>
     <message>
         <source>Used positioning method: %1</source>
-        <translation type="unfinished">Käytetty paikannusmenetelmä: %1</translation>
+        <translation>Käytetty paikannusmenetelmä: %1</translation>
     </message>
     <message>
         <source></source>
@@ -622,85 +622,85 @@
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Updating</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetään</translation>
     </message>
 </context>
 <context>
     <name>VideoCameraPage</name>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Primary</source>
-        <translation type="unfinished"></translation>
+        <translation>Takakamera</translation>
     </message>
     <message>
         <source>Secondary</source>
-        <translation type="unfinished"></translation>
+        <translation>Etukamera</translation>
     </message>
     <message>
         <source>Start recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Aloita nauhoitus</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Lopeta nauhoitus</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source>Length of video: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Videon pituus: %1</translation>
     </message>
     <message>
         <source>Error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe: %1</translation>
     </message>
     <message>
         <source>No errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei virheitä</translation>
     </message>
     <message>
         <source>Capture error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe kuvatessa: %1</translation>
     </message>
     <message>
         <source>Video Camera</source>
-        <translation type="unfinished"></translation>
+        <translation>Videokamera</translation>
     </message>
     <message>
         <source>Video save path</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennuspolku</translation>
     </message>
     <message>
         <source>video orientation portrait</source>
-        <translation type="unfinished"></translation>
+        <translation>Muotokuva</translation>
     </message>
 </context>
 <context>
     <name>VideoPreviewPage</name>
     <message>
         <source>Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Video</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Soita</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskeytä</translation>
     </message>
 </context>
 </TS>
