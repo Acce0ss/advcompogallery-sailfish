@@ -62,7 +62,7 @@ Page {
     viewfinderResolution: "640x480"
     manufacturer: "Jolla"
     model: "Jolla"
-    rotation: root.isPortrait ? 90 : 0
+    rotation: root.isPortrait ? 0 : 90
   }
 
   SilicaFlickable {
@@ -89,9 +89,9 @@ Page {
 
         width: parent.width-2*Theme.paddingLarge
 
-        text: StandardPaths.data + "/test" + root.count + ".jpg";
+        text: StandardPaths.pictures + "/test" + root.count + ".jpg";
         label: qsTr("Image save path")
-        placeholderText: StandardPaths.data + "/"
+        placeholderText: StandardPaths.pictures + "/"
 
       }
 

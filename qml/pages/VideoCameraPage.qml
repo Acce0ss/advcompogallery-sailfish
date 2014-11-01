@@ -19,9 +19,13 @@ Page {
 
     captureMode: Camera.CaptureVideo
 
-    cameraState: root._complete && !root._unload
+    cameraState: (root._complete && !root._unload)
                  ? Camera.ActiveState
                  : Camera.UnloadedState
+
+    onCameraStateChanged: {
+      console.log("state: " + cameraState)
+    }
 
     focus {
       focusMode: Camera.FocusMacro
@@ -42,6 +46,8 @@ Page {
       mediaContainer: "video/x-matroska"
       onRecorderStateChanged: {
         if (camera.videoRecorder.recorderState == CameraRecorder.StoppedState) {
+          camera.cameraState = Camera.UnloadedState;
+          root._complete = false;
           console.log("saved to: " + camera.videoRecorder.outputLocation)
           var source = savePathInput.text; //copy with current filename to prevent binding
           pageStack.push("VideoPreviewPage.qml", {source: source}, PageStackAction.Animated);
@@ -64,7 +70,7 @@ Page {
     viewfinderResolution: "1280x720"
     manufacturer: "Jolla"
     model: "Jolla"
-    rotation: root.isPortrait ? 90 : 0
+    rotation: root.isPortrait ? 0 : 90
   }
 
   SilicaFlickable {
@@ -91,29 +97,29 @@ Page {
 
         width: parent.width-2*Theme.paddingLarge
 
-        text: StandardPaths.data + "/test" + root.count + ".mp4";
+        text: StandardPaths.videos + "/test" + root.count + ".mkv";
         label: qsTr("Video save path")
-        placeholderText: StandardPaths.data + "/"
+        placeholderText: StandardPaths.videos + "/"
 
       }
 
-      TextSwitch {
-        id: activationSwitch
-        text: qsTr("Camera active")
-        anchors.horizontalCenter: parent.horizontalCenter
-        checked: true
-        onCheckedChanged: {
+//      TextSwitch {
+//        id: activationSwitch
+//        text: qsTr("Camera active")
+//        anchors.horizontalCenter: parent.horizontalCenter
+//        checked: true
+//        onCheckedChanged: {
 
-          if(camera.cameraState == Camera.ActiveState)
-          {
-            camera.cameraState = Camera.UnloadedState;
-          }
-          else if(camera.cameraState == Camera.UnloadedState)
-          {
-            camera.cameraState = Camera.ActiveState;
-          }
-        }
-      }
+//          if(camera.cameraState == Camera.ActiveState)
+//          {
+//            camera.cameraState = Camera.UnloadedState;
+//          }
+//          else if(camera.cameraState == Camera.UnloadedState)
+//          {
+//            camera.cameraState = Camera.ActiveState;
+//          }
+//        }
+//      }
 
       TextSwitch {
         id: portraitSwitch
@@ -125,6 +131,7 @@ Page {
       ComboBox {
         id: cameraChooser
         width: parent.width
+        enabled: camera.videoRecorder.recorderState == CameraRecorder.StoppedState
         menu: ContextMenu {
           MenuItem {
             text: qsTr("Primary")
@@ -171,8 +178,8 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         size: BusyIndicatorSize.Medium
         running: camera.availability == Camera.Busy ||
-                 camera.videoRecorder.recorderStatus == CameraRecorder.LoadingStatus ||
-                 camera.videoRecorder.recorderStatus == CameraRecorder.FinalizingStatus
+                 camera.videoRecorder.recorderStatus == CameraRecorder.LoadingStatus //||
+                 //camera.videoRecorder.recorderStatus == CameraRecorder.FinalizingStatus
       }
 
       Rectangle {
@@ -202,7 +209,7 @@ Page {
 
           anchors.fill: parent
 
-          focus: visible
+          visible: root.status == PageStatus.Active
           source: camera
           fillMode: VideoOutput.PreserveAspectCrop
 
@@ -220,12 +227,12 @@ Page {
         x: Theme.paddingLarge
         width: parent.width-2*Theme.paddingLarge
         wrapMode: Text.Wrap
-        property date startTime: new Date()
+        property date startTime
         function simpleTimeString(duration)
         {
-          console.log(duration)
-          var time = new Date((new Date()) - startTime);
-          return time.getHours() - (new Date().getHours()) + ":"
+          var now = new Date();
+          var time = new Date((now - startTime) + now.getTimezoneOffset()*60*1000);
+          return time.getHours() + ":"
               + time.getMinutes() + ":"
               + time.getSeconds();
         }
@@ -246,9 +253,32 @@ Page {
       }
     }
   }
+
+  Timer {
+    id: reloadTimer
+    interval: 100
+    running: root._unload && camera.cameraStatus == Camera.UnloadedStatus
+    onTriggered: {
+      console.log("Reloaded")
+      root._unload = false
+    }
+  }
+
+  onStatusChanged: {
+
+    if(root.status == PageStatus.Active)
+    {
+      _complete = true;
+      console.log("what's happening?" + _complete + _unload)
+      reload();
+    }
+  }
+
   Component.onCompleted: {
     _complete = true;
   }
+
+
   Component.onDestruction: {
     if (camera.cameraState != Camera.UnloadedState) {
       camera.cameraState = Camera.UnloadedState

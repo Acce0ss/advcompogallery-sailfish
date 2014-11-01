@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     QTranslator appTranslator;
     appTranslator.load("harbour-advcompogallery-" + QLocale::system().name(),
-                        "/usr/share/harbour-advcompogallery/translations");
+                       "/usr/share/harbour-advcompogallery/translations");
     app->installTranslator(&appTranslator);
 
     viewer->setSource(SailfishApp::pathTo("qml/harbour-advcompogallery.qml"));

@@ -16,23 +16,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Measuring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Acceleration including gravity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>along X-axis: %1&lt;br&gt;along Y-axis: %2&lt;br&gt;along Z-axis: %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -242,23 +234,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source></source>
         <translation></translation>
     </message>
     <message>
-        <source>Linear acceleration</source>
+        <source>Rotational acceleration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>around X-axis: %1&lt;br&gt;around Y-axis: %2&lt;br&gt;around Z-axis: %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -361,7 +345,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Viewfinder and saving a video</source>
+        <source>Viewfinder and saving and playing video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sound effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using sound effects</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -533,6 +525,25 @@
     </message>
 </context>
 <context>
+    <name>SoundEffectPage</name>
+    <message>
+        <source>Playing a sound effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute sound effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TapsPage</name>
     <message>
         <source>Available position sources</source>
@@ -622,10 +633,6 @@
     <name>VideoCameraPage</name>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Camera active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

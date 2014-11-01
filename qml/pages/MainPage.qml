@@ -102,7 +102,14 @@ Page {
     ListElement {
       page: "VideoCameraPage.qml"
       title: QT_TR_NOOP("Video Camera")
-      subtitle: QT_TR_NOOP("Viewfinder and saving a video")
+      subtitle: QT_TR_NOOP("Viewfinder and saving and playing video")
+      section: QT_TR_NOOP("Multimedia")
+    }
+
+    ListElement {
+      page: "SoundEffectPage.qml"
+      title: QT_TR_NOOP("Sound effect")
+      subtitle: QT_TR_NOOP("Using sound effects")
       section: QT_TR_NOOP("Multimedia")
     }
 

@@ -47,7 +47,10 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/pages/DBusReceivePage.qml \
     qml/pages/DBusListenPage.qml \
     qml/pages/VideoCameraPage.qml \
-    qml/pages/VideoPreviewPage.qml
+    qml/pages/VideoPreviewPage.qml \
+    sounds/explosion.wav \
+    qml/pages/SoundEffectPage.qml \
+    qml/components/AccelerationIndicator.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -58,7 +61,8 @@ TRANSLATIONS += translations/harbour-advcompogallery-fi.ts
 presets.files = presets
 presets.path = /usr/share/harbour-advcompogallery
 
-INSTALLS = presets
+sounds.files = sounds
+sounds.path = /usr/share/harbour-advcompogallery
 
-HEADERS +=
+INSTALLS = presets sounds
 
