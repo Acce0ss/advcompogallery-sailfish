@@ -27,6 +27,10 @@
         <source>along X-axis: %1&lt;br&gt;along Y-axis: %2&lt;br&gt;along Z-axis: %3</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Visualize:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CameraPage</name>
@@ -103,10 +107,6 @@
     </message>
     <message>
         <source>Angle: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>calibration level</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -226,6 +226,10 @@
     </message>
     <message>
         <source>around X-axis: %1&lt;br&gt;around Y-axis: %2&lt;br&gt;around Z-axis: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visualize:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

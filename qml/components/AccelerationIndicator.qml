@@ -10,6 +10,7 @@ Item {
   property real max_pos_abs: 15
   property real x_pos: 0
   property real y_pos: 0
+  property real z_pos: 0
 
   function get_x_coord(x_val, width)
   {
@@ -25,17 +26,25 @@ Item {
     return base_y + d_y;
   }
 
+  function get_size(z_val)
+  {
+    var base_size = root.height / 10;
+    var d_size = (root.height / 10) * (z_val / root.max_pos_abs);
+    return base_size + d_size;
+  }
+
   Rectangle {
     id: indicator
 
     x: get_x_coord(x_pos, width)
     y: get_y_coord(y_pos, height)
 
-    Behavior on x { SmoothedAnimation { velocity: 2000 } }
-    Behavior on y { SmoothedAnimation { velocity: 2000 } }
+    Behavior on x { SmoothedAnimation { velocity: 1500 } }
+    Behavior on y { SmoothedAnimation { velocity: 1500 } }
+    Behavior on width { SmoothedAnimation { velocity: 1500 } }
 
     color: "red"
-    width: parent.width / 10
+    width: get_size(z_pos)
     height: width
   }
 

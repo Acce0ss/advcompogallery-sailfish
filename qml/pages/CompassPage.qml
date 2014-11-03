@@ -43,7 +43,7 @@ Page {
     Label {
       wrapMode: Text.Wrap
       text: qsTr("Angle: %1").arg(sensor.angle)
-    }
+    }/*
     ProgressBar {
       width: parent.width
 
@@ -52,7 +52,7 @@ Page {
       label: qsTr("calibration level")
       valueText: value
       value: sensor.accuracy
-    }
+    }*/
 
   }
   Item {
