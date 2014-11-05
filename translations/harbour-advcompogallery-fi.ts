@@ -86,6 +86,10 @@
         <source>picture orientation portrait</source>
         <translation>Muotokuva</translation>
     </message>
+    <message>
+        <source>Used camera:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CompassPage</name>
@@ -377,7 +381,7 @@
     </message>
     <message>
         <source>Publish notification</source>
-        <translation>Julkaise ilmoitus</translation>
+        <translation type="obsolete">Julkaise ilmoitus</translation>
     </message>
     <message>
         <source>Content</source>
@@ -418,6 +422,42 @@
     <message>
         <source>Create persistent notification</source>
         <translation>Luo kestävä ilmoitus</translation>
+    </message>
+    <message>
+        <source>Delay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 ms</source>
+        <translation type="unfinished">%1 ms</translation>
+    </message>
+    <message>
+        <source>Indicators</source>
+        <translation type="unfinished">Ilmaisimet</translation>
+    </message>
+    <message>
+        <source>Publish new notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close reason number %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close reason number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current notification id:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update current notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close current notification</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -690,6 +730,10 @@
     <message>
         <source>video orientation portrait</source>
         <translation>Muotokuva</translation>
+    </message>
+    <message>
+        <source>Used camera:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

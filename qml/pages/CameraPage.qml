@@ -121,6 +121,7 @@ Page {
       ComboBox {
         id: cameraChooser
         width: parent.width
+        label: qsTr("Used camera:")
         menu: ContextMenu {
           MenuItem {
             text: qsTr("Primary")

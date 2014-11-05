@@ -126,6 +126,7 @@ Page {
       ComboBox {
         id: cameraChooser
         width: parent.width
+        label: qsTr("Used camera:")
         enabled: camera.videoRecorder.recorderState == CameraRecorder.StoppedState
         menu: ContextMenu {
           MenuItem {
