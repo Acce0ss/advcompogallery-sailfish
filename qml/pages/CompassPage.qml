@@ -63,7 +63,7 @@ Page {
 
     CircleIndicator {
       anchors.centerIn: parent
-      value: sensor.angle
+      value: Math.abs(360-sensor.angle) //difference to north
       maxValue: 360
     }
 

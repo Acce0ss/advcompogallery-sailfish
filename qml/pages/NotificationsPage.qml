@@ -6,6 +6,7 @@ Page {
   id: root
 
   property bool addNew: true
+  property bool removing: false
 
   Notification {
     id: notification
@@ -18,15 +19,30 @@ Page {
 
     onClicked: {
       app.activate();
+
+    }
+
+    onReplacesIdChanged: {
+      console.log("Now at id " + replacesId)
+      if(replacesId == 0 && root.removing)
+      {
+        root.removing = false;
+        if(idModel.count > 0)
+        {
+          notification.replacesId = idModel.get(0).notificationId;
+        }
+      }
+
     }
 
     onClosed: {
-      reasonLabel.text = qsTr("Close reason number %1").arg(reason);
-      activeIndicator.checked = false;
-      idModel.remove(replacesIdLabel.currentIndex, 1);
-      if(idModel.count > 0)
+      if(replacesId != 0) //circumvent a bug in the notifications plugin
       {
-        replacesId = replacesIdLabel.currentItem.value;
+        reasonLabel.text = qsTr("Close reason number %1").arg(reason);
+        var toBeRemoved = replacesIdLabel.currentIndex;
+        console.log("removing index: " + toBeRemoved + ", id: ", notification.replacesId)
+        idModel.remove(toBeRemoved);
+        root.removing = true;
       }
     }
   }
@@ -37,13 +53,12 @@ Page {
     onTriggered: {
       notification.timestamp = new Date();
       notification.publish();
-      activeIndicator.checked = true;
       stop();
       if(root.addNew)
       {
-        idModel.append({"notificationId": notification.replacesId})
-        replacesIdLabel.currentIndex = idModel.count - 1; // change to latest added
-        root.addNew = false
+        idModel.append({"notificationId": notification.replacesId});
+        replacesIdLabel.currentIndex = idModel.count-1;
+        root.addNew = false;
       }
     }
   }
@@ -97,8 +112,15 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         enabled: notification.replacesId > 0
         onClicked: {
+
           notification.close();
-          notification.closed(3); // 3 means "closed by call to CloseNotification"
+          if(idModel.count > 0)
+          {
+            //needs to be called because of a bug in
+            // org.nemomobile.notifications plugin
+            // so that closed() signal is properly emitted
+            notification.replacesId = replacesIdLabel.currentItem.value;
+          }
         }
       }
       Slider {
@@ -130,10 +152,12 @@ Page {
         width: parent.width - 2*Theme.paddingLarge
         label: qsTr("Current notification id:")
         visible: idModel.count > 0
+
         menu: ContextMenu {
           Repeater {
             id: idSpawner
             model: idModel
+
             delegate: MenuItem {
               text: notificationId
               property int value: notificationId
@@ -141,8 +165,12 @@ Page {
           }
         }
 
+
         onCurrentIndexChanged: {
-          notification.replacesId = currentItem.value;
+          if(replacesIdLabel.currentItem != null)
+          {
+            notification.replacesId = replacesIdLabel.currentItem.value;
+          }
         }
 
         ListModel {
@@ -152,12 +180,6 @@ Page {
 
       SectionHeader {
         text: qsTr("Indicators")
-      }
-      TextSwitch {
-        id: activeIndicator
-        enabled: false
-        text: qsTr("Notification active")
-        checked: false
       }
       Label {
         id: reasonLabel
@@ -181,6 +203,7 @@ Page {
         id: notificationSummary
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
+        text: qsTr("test")
         placeholderText: label
         label: qsTr("Summary of the notification")
       }
@@ -188,6 +211,7 @@ Page {
         id: notificationPreviewSummary
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
+        text: qsTr("test")
         placeholderText: label
         label: qsTr("Summary for the popup")
       }
@@ -195,6 +219,7 @@ Page {
         id: notificationContent
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
+        text: qsTr("test")
         placeholderText: label
         label: qsTr("Content of the notification")
       }
@@ -202,6 +227,7 @@ Page {
         id: notificationPreviewContent
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge
+        text: qsTr("test")
         placeholderText: label
         label: qsTr("Content of the popup")
       }

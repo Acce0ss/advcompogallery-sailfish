@@ -363,10 +363,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Notification active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Summary of the notification</source>
         <translation type="unfinished"></translation>
     </message>
@@ -432,6 +428,10 @@
     </message>
     <message>
         <source>Close current notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>test</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
