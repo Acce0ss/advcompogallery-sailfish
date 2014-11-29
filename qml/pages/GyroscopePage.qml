@@ -21,7 +21,7 @@ Page {
     id: content
     width: parent.width
     PageHeader {
-      title: qsTr("Rotational acceleration")
+      title: qsTr("Angular speed")
     }
 
     SectionHeader {

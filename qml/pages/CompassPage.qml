@@ -14,9 +14,11 @@ Page {
     dataRate: 25
 
 
-    property int angle: reading != null ? reading.azimuth : 0
-    property real accuracy: reading != null ? reading.calibrationLevel : 0
+    property int angle: readingReady ? reading.azimuth : 0
+    property real accuracy: readingReady ? reading.calibrationLevel : 0
   }
+
+  property bool readingReady: sensor.reading != null
 
   Column {
 
@@ -41,6 +43,8 @@ Page {
     }
 
     Label {
+      x: Theme.paddingLarge
+      width: parent.width-2*Theme.paddingLarge
       wrapMode: Text.Wrap
       text: qsTr("Angle: %1").arg(sensor.angle)
     }/*

@@ -72,7 +72,7 @@ Page {
     ListElement {
       page: "GyroscopePage.qml"
       title: QT_TR_NOOP("Gyroscope")
-      subtitle: QT_TR_NOOP("Getting various acceleration data")
+      subtitle: QT_TR_NOOP("Getting angular speed")
       section: QT_TR_NOOP("Sensors and measurement")
     }
 
