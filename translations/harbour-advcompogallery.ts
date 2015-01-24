@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.1">
 <context>
     <name>AccelerationPage</name>
     <message>
@@ -225,15 +225,15 @@
         <translation></translation>
     </message>
     <message>
-        <source>Rotational acceleration</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>around X-axis: %1&lt;br&gt;around Y-axis: %2&lt;br&gt;around Z-axis: %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Visualize:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angular speed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -345,6 +345,10 @@
     </message>
     <message>
         <source>Using sound effects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Getting angular speed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -494,6 +498,15 @@
     </message>
     <message>
         <source>Indicators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your speed is %1 m/s, and altitude approximately %2 m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From Helsinki to your location:
+ distance %1 m, and bearing %2 degrees</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

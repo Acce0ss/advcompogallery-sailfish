@@ -82,6 +82,32 @@ Page {
       .arg(positionSrc.position.coordinate.longitude);
     }
 
+    Label {
+      id: speedLabel
+      x: Theme.paddingLarge
+      width: parent.width-2*Theme.paddingLarge
+      wrapMode: Text.WordWrap
+      text: qsTr("Your speed is %1 m/s, and altitude approximately %2 m")
+        .arg(positionSrc.position.speedValid ? positionSrc.position.speed : 0)
+        .arg(positionSrc.position.altitudeValid ? positionSrc.position.coordinate.altitude : 0);
+    }
 
+    Location {
+      id: helsinki
+      coordinate {
+        latitude: 60.1708
+        longitude: 24.9375
+      }
+    }
+
+    Label {
+      id: distanceLabel
+      x: Theme.paddingLarge
+      width: parent.width-2*Theme.paddingLarge
+      wrapMode: Text.WordWrap
+      text: qsTr("From Helsinki to your location:\n distance %1 m, and bearing %2 degrees")
+        .arg(helsinki.coordinate.distanceTo(positionSrc.position.coordinate))
+        .arg(helsinki.coordinate.azimuthTo(positionSrc.position.coordinate));
+    }
   }
 }

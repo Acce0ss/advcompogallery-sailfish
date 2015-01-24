@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fi_FI">
+<TS version="2.1" language="fi_FI">
 <context>
     <name>AccelerationPage</name>
     <message>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Visualize:</source>
-        <translation type="unfinished"></translation>
+        <translation>Havainnolistus:</translation>
     </message>
 </context>
 <context>
@@ -88,7 +88,7 @@
     </message>
     <message>
         <source>Used camera:</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytetty kamera:</translation>
     </message>
 </context>
 <context>
@@ -247,7 +247,7 @@
     </message>
     <message>
         <source>Rotational acceleration</source>
-        <translation>Kiihtyvyys kierron suhteen</translation>
+        <translation type="vanished">Kiihtyvyys kierron suhteen</translation>
     </message>
     <message>
         <source>around X-axis: %1&lt;br&gt;around Y-axis: %2&lt;br&gt;around Z-axis: %3</source>
@@ -255,7 +255,11 @@
     </message>
     <message>
         <source>Visualize:</source>
-        <translation type="unfinished"></translation>
+        <translation>Havainnolistus:</translation>
+    </message>
+    <message>
+        <source>Angular speed</source>
+        <translation>Kulmanopeus</translation>
     </message>
 </context>
 <context>
@@ -368,6 +372,10 @@
         <source>Using sound effects</source>
         <translation>Äänitehosteen käyttäminen</translation>
     </message>
+    <message>
+        <source>Getting angular speed</source>
+        <translation>Mitataan kulmanopeutta</translation>
+    </message>
 </context>
 <context>
     <name>NotificationsPage</name>
@@ -425,43 +433,43 @@
     </message>
     <message>
         <source>Delay</source>
-        <translation type="unfinished"></translation>
+        <translation>Viive</translation>
     </message>
     <message>
         <source>%1 ms</source>
-        <translation type="unfinished">%1 ms</translation>
+        <translation>%1 ms</translation>
     </message>
     <message>
         <source>Indicators</source>
-        <translation type="unfinished">Ilmaisimet</translation>
+        <translation>Ilmaisimet</translation>
     </message>
     <message>
         <source>Publish new notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Julkaise uusi ilmoitus</translation>
     </message>
     <message>
         <source>Close reason number %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulkemissyyn koodi: %1</translation>
     </message>
     <message>
         <source>Close reason number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulkemissyyn koodi: %1</translation>
     </message>
     <message>
         <source>Current notification id:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitun ilmoituksen tunnus:</translation>
     </message>
     <message>
         <source>Update current notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä nykyistä ilmoitusta</translation>
     </message>
     <message>
         <source>Close current notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje nykyinen ilmoitus</translation>
     </message>
     <message>
         <source>test</source>
-        <translation type="unfinished"></translation>
+        <translation>testi</translation>
     </message>
 </context>
 <context>
@@ -536,6 +544,16 @@
     <message>
         <source>Indicators</source>
         <translation>Ilmaisimet</translation>
+    </message>
+    <message>
+        <source>Your speed is %1 m/s, and altitude approximately %2 m</source>
+        <translation>Nopeutesi on %1 m/s ja korkeutesi merenpinnasta noin %2 m.</translation>
+    </message>
+    <message>
+        <source>From Helsinki to your location:
+ distance %1 m, and bearing %2 degrees</source>
+        <translation type="unfinished">Helsingistä katsoen:
+Etäisyys %1 m ja suuntima %2 astetta</translation>
     </message>
 </context>
 <context>
@@ -737,7 +755,7 @@
     </message>
     <message>
         <source>Used camera:</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytetty kamera:</translation>
     </message>
 </context>
 <context>

@@ -1,4 +1,4 @@
 advcompogallery-sailfish
 ========================
 
-Advanced Component Gallery, as an example application for Skrolli 2014.4
+Advanced Component Gallery, as an example application for Skrolli 2015.1
