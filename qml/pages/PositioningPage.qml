@@ -77,9 +77,10 @@ Page {
       x: Theme.paddingLarge
       width: parent.width-2*Theme.paddingLarge
       wrapMode: Text.WordWrap
-      text: qsTr("You're at %1 latitude, %2 longitude")
+      text: qsTr("You're at %1 latitude, %2 longitude, by accuracy of %3 m")
       .arg(positionSrc.position.coordinate.latitude)
-      .arg(positionSrc.position.coordinate.longitude);
+      .arg(positionSrc.position.coordinate.longitude)
+      .arg(positionSrc.position.horizontalAccuracy);
     }
 
     Label {
@@ -87,7 +88,7 @@ Page {
       x: Theme.paddingLarge
       width: parent.width-2*Theme.paddingLarge
       wrapMode: Text.WordWrap
-      text: qsTr("Your speed is %1 m/s, and altitude approximately %2 m")
+      text: qsTr("Your speed is %1 m/s, and altitude approximately %2 m.")
         .arg(positionSrc.position.speedValid ? positionSrc.position.speed : 0)
         .arg(positionSrc.position.altitudeValid ? positionSrc.position.coordinate.altitude : 0);
     }
@@ -109,5 +110,6 @@ Page {
         .arg(helsinki.coordinate.distanceTo(positionSrc.position.coordinate))
         .arg(helsinki.coordinate.azimuthTo(positionSrc.position.coordinate));
     }
+
   }
 }

@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Visualize:</source>
-        <translation>Havainnolistus:</translation>
+        <translation>Havainnollistus:</translation>
     </message>
 </context>
 <context>
@@ -515,7 +515,7 @@
     </message>
     <message>
         <source>You&apos;re at %1 latitude, %2 longitude</source>
-        <translation>Olet leveyspiirillä %1 ja pituuspiirillä %2</translation>
+        <translation type="vanished">Olet leveyspiirillä %1 ja pituuspiirillä %2</translation>
     </message>
     <message>
         <source>Stop updating</source>
@@ -547,13 +547,21 @@
     </message>
     <message>
         <source>Your speed is %1 m/s, and altitude approximately %2 m</source>
-        <translation>Nopeutesi on %1 m/s ja korkeutesi merenpinnasta noin %2 m.</translation>
+        <translation type="vanished">Nopeutesi on %1 m/s ja korkeutesi merenpinnasta noin %2 m.</translation>
     </message>
     <message>
         <source>From Helsinki to your location:
  distance %1 m, and bearing %2 degrees</source>
-        <translation type="unfinished">Helsingistä katsoen:
+        <translation>Helsingistä katsoen:
 Etäisyys %1 m ja suuntima %2 astetta</translation>
+    </message>
+    <message>
+        <source>You&apos;re at %1 latitude, %2 longitude, by accuracy of %3 m</source>
+        <translation>Olet leveyspiirillä %1 ja pituuspiirillä %2, tarkkuudella %3 m</translation>
+    </message>
+    <message>
+        <source>Your speed is %1 m/s, and altitude approximately %2 m.</source>
+        <translation>Nopeutesi on %1 m/s ja korkeutesi merenpinnasta noin %2 m.</translation>
     </message>
 </context>
 <context>

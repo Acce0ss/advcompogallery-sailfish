@@ -457,10 +457,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You&apos;re at %1 latitude, %2 longitude</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Satellite</source>
         <translation type="unfinished"></translation>
     </message>
@@ -501,12 +497,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Your speed is %1 m/s, and altitude approximately %2 m</source>
+        <source>From Helsinki to your location:
+ distance %1 m, and bearing %2 degrees</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>From Helsinki to your location:
- distance %1 m, and bearing %2 degrees</source>
+        <source>You&apos;re at %1 latitude, %2 longitude, by accuracy of %3 m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your speed is %1 m/s, and altitude approximately %2 m.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

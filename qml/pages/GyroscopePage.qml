@@ -34,19 +34,6 @@ Page {
       anchors.horizontalCenter: parent.horizontalCenter
       checked: true
     }
-
-    SectionHeader {
-      text: qsTr("Indicators")
-    }
-
-    Label {
-      x: Theme.paddingLarge
-      width: parent.width - 2*Theme.paddingLarge
-      text: qsTr("around X-axis: %1<br>around Y-axis: %2<br>around Z-axis: %3")
-      .arg(readingReady ? sensor.reading.x : 0)
-      .arg(readingReady ? sensor.reading.y : 0)
-      .arg(readingReady ? sensor.reading.z : 0)
-    }
     Label {
       x: Theme.paddingLarge
       width: parent.width - 2*Theme.paddingLarge
@@ -70,6 +57,20 @@ Page {
         text: "Z"
       }
     }
+
+    SectionHeader {
+      text: qsTr("Indicators")
+    }
+
+    Label {
+      x: Theme.paddingLarge
+      width: parent.width - 2*Theme.paddingLarge
+      text: qsTr("around X-axis: %1<br>around Y-axis: %2<br>around Z-axis: %3")
+      .arg(readingReady ? sensor.reading.x : 0)
+      .arg(readingReady ? sensor.reading.y : 0)
+      .arg(readingReady ? sensor.reading.z : 0)
+    }
+
   }
   AccelerationIndicator {
     id: ind

@@ -5,12 +5,15 @@ import QtSensors 5.0
 Page {
   id: root
 
+  property bool readingReady: sensor.reading != null
+
   ProximitySensor {
     id: sensor
     alwaysOn: true
     active: activationSwitch.checked
 
   }
+
 
   Column {
     height: parent.height
@@ -49,7 +52,7 @@ Page {
       width: 10*Theme.paddingLarge
       height: width
 
-      dimmed: sensor.reading != null ? sensor.reading.near : true
+      dimmed: root.readingReady ? sensor.reading.near : false
       falloffRadius: dimmed ? 0.15 : 0.25
       cache: false
     }
