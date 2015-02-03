@@ -5,9 +5,6 @@ import org.nemomobile.notifications 1.0
 Page {
   id: root
 
-  property bool addNew: true
-  property bool removing: false
-
   Notification {
     id: notification
     category: notificationCategory.text
@@ -15,24 +12,10 @@ Page {
     body: persistentSwitch.checked ? notificationContent.text : ""
     previewBody: popupSwitch.checked ? notificationPreviewContent.text : ""
     previewSummary: popupSwitch.checked ? notificationPreviewSummary.text : ""
-    itemCount: numberOfItems.value
+    itemCount: numberOfItemsSlider.value
 
     onClicked: {
       app.activate();
-
-    }
-
-    onReplacesIdChanged: {
-      console.log("Now at id " + replacesId)
-      if(replacesId == 0 && root.removing)
-      {
-        root.removing = false;
-        if(idModel.count > 0)
-        {
-          notification.replacesId = idModel.get(0).notificationId;
-        }
-      }
-
     }
 
     onClosed: {
@@ -41,8 +24,7 @@ Page {
         reasonLabel.text = qsTr("Close reason number %1").arg(reason);
         var toBeRemoved = replacesIdLabel.currentIndex;
         console.log("removing index: " + toBeRemoved + ", id: ", notification.replacesId)
-        idModel.remove(toBeRemoved);
-        root.removing = true;
+        idModel.update();
       }
     }
   }
@@ -54,18 +36,17 @@ Page {
       notification.timestamp = new Date();
       notification.publish();
       stop();
-      if(root.addNew)
-      {
-        idModel.append({"notificationId": notification.replacesId});
-        replacesIdLabel.currentIndex = idModel.count-1;
-        root.addNew = false;
-      }
+
+      idModel.update();
     }
   }
 
   Connections {
     target: Qt.application
-    onAboutToQuit: notification.close()
+    onAboutToQuit: {
+      var notifications = notification.notifications();
+      notifications.forEach(function(em,i,a){em.close()});
+    }
   }
 
   SilicaFlickable {
@@ -92,7 +73,6 @@ Page {
 
         onClicked: {
           notification.replacesId = 0;
-          root.addNew = true;
           delayTimer.start();
         }
       }
@@ -102,7 +82,6 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         enabled: notification.replacesId > 0
         onClicked: {
-          root.addNew = false;
           delayTimer.start();
         }
       }
@@ -119,7 +98,7 @@ Page {
             //needs to be called because of a bug in
             // org.nemomobile.notifications plugin
             // so that closed() signal is properly emitted
-            notification.replacesId = replacesIdLabel.currentItem.value;
+            notification.replacesId = replacesIdLabel.currentItem.notificationObj.replacesId;
           }
         }
       }
@@ -156,25 +135,48 @@ Page {
         menu: ContextMenu {
           Repeater {
             id: idSpawner
-            model: idModel
+            model: ListModel {
+              id: idModel
+              function clicked(){ app.activate()}
+              function update() {
+                clear()
+                var items = notification.notifications();
+                items.forEach(function (em,i,a) {
+
+                  append({"notification":em});
+                });
+                if(count > 0)
+                {
+                  replacesIdLabel.currentIndex = 0;
+                }
+              }
+
+
+              Component.onCompleted: update()
+            }
 
             delegate: MenuItem {
-              text: notificationId
-              property int value: notificationId
+              text: notification.replacesId
+              property Notification notificationObj: notification
             }
           }
         }
 
-
         onCurrentIndexChanged: {
-          if(replacesIdLabel.currentItem != null)
+          if(idModel.count > 0)
           {
-            notification.replacesId = replacesIdLabel.currentItem.value;
+            var current = replacesIdLabel.currentItem.notificationObj;
+            if(current !== null)
+            {
+              notification.replacesId = current.replacesId;
+              notificationCategory.text = current.category;
+              notificationSummary.text = current.summary;
+              notificationContent.text = current.body;
+              notificationPreviewContent.text = current.previewBody;
+              notificationPreviewSummary.text = current.previewSummary;
+              numberOfItemsSlider.value = current.itemCount;
+            }
           }
-        }
-
-        ListModel {
-          id: idModel
         }
       }
 
@@ -232,7 +234,7 @@ Page {
         label: qsTr("Content of the popup")
       }
       Slider {
-        id: numberOfItems
+        id: numberOfItemsSlider
 
         x: Theme.paddingLarge
         width: parent.width - 2*Theme.paddingLarge

@@ -24,8 +24,6 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/pages/FirstPage.qml \
     qml/pages/SecondPage.qml \
     rpm/harbour-advcompogallery.changes.in \
-    rpm/harbour-advcompogallery.spec \
-    rpm/harbour-advcompogallery.yaml \
     translations/*.ts \
     harbour-advcompogallery.desktop \
     qml/cover/CoverPage.qml \
@@ -50,7 +48,9 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/pages/VideoPreviewPage.qml \
     sounds/explosion.wav \
     qml/pages/SoundEffectPage.qml \
-    qml/components/AccelerationIndicator.qml
+    qml/components/AccelerationIndicator.qml \
+    rpm/harbour-advcompogallery.yaml \
+    rpm/harbour-advcompog
 
 # to disable building translations every time, comment out the
 # following CONFIG line
