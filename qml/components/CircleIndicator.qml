@@ -4,6 +4,9 @@ import Sailfish.Silica 1.0
 Item {
   id: root
 
+  height: valueCircle.height
+  width: valueCircle.width
+  
   property int value: 0
   property int maxValue: 360
 

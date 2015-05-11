@@ -7,6 +7,8 @@ import "../components"
 Page {
   id: root
 
+  allowedOrientations: Orientation.PortraitInverted | Orientation.Landscape | Orientation.Portrait
+
   Compass {
     id: sensor
     alwaysOn: true
@@ -21,7 +23,7 @@ Page {
   property bool readingReady: sensor.reading != null
 
   Column {
-
+    id: content
     width: parent.width
     PageHeader {
       title: qsTr("Compass")
@@ -59,17 +61,13 @@ Page {
     }*/
 
   }
-  Item {
-    anchors.bottom: root.bottom
-    anchors.left: root.left
-    width: parent.width
-    height: 500
-
-    CircleIndicator {
-      anchors.centerIn: parent
-      value: Math.abs(360-sensor.angle) //difference to north
-      maxValue: 360
-    }
-
+  
+  CircleIndicator {
+    anchors.horizontalCenter: parent.horizontalCenter
+	anchors.top: content.bottom
+    value: Math.abs(360-sensor.angle) //difference to north
+    maxValue: 360
   }
+
+  
 }

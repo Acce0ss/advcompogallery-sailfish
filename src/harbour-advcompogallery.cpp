@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
                        "/usr/share/harbour-advcompogallery/translations");
     app->installTranslator(&appTranslator);
 
+    qDebug() << "TEst";
+
     viewer->setSource(SailfishApp::pathTo("qml/harbour-advcompogallery.qml"));
     viewer->show();
     return app->exec();
