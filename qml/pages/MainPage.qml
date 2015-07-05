@@ -49,13 +49,6 @@ Page {
     }
 
     ListElement {
-      page: "PositioningPage.qml"
-      title: QT_TR_NOOP("Positioning")
-      subtitle: QT_TR_NOOP("Getting GPS coordinates etc.")
-      section: QT_TR_NOOP("Sensors and measurement")
-    }
-
-    ListElement {
       page: "CompassPage.qml"
       title: QT_TR_NOOP("Compass")
       subtitle: QT_TR_NOOP("Reading the values from E-compass")
@@ -83,14 +76,26 @@ Page {
       section: QT_TR_NOOP("Sensors and measurement")
     }
 
-
-    // Doesn't seem to work yet, gives timestamp from year 4147..
 //    ListElement {
 //      page: "TapsPage.qml"
 //      title: QT_TR_NOOP("Taps")
 //      subtitle: QT_TR_NOOP("Sensing tapping")
 //      section: QT_TR_NOOP("Sensors and measurement")
 //    }
+
+    ListElement {
+      page: "PositioningPage.qml"
+      title: QT_TR_NOOP("Positioning")
+      subtitle: QT_TR_NOOP("Getting GPS coordinates etc.")
+      section: QT_TR_NOOP("Position and location")
+    }
+
+    ListElement {
+      page: "MapPage.qml"
+      title: QT_TR_NOOP("Using maps")
+      subtitle: QT_TR_NOOP("Placing markers, drawing routes")
+      section: QT_TR_NOOP("Position and location")
+    }
 
     ListElement {
       page: "CameraPage.qml"

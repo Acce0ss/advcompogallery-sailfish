@@ -351,6 +351,93 @@
         <source>Getting angular speed</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Position and location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Placing markers, drawing routes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MapPage</name>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Own position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw route</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Place markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nearby places</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center map to my position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functionality mode for the map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear all items in map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Route</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Press the map to show/hide full map, own position is shown with uncertainty circle.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click on the map to define route points.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click on the map to place marker. Bottom corner of the rectangle is placed on the coordinate.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color markers inside a 1500 m radius circle, centered at clicked point.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error, faulty mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NotificationsPage</name>

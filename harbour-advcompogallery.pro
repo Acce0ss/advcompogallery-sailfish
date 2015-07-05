@@ -50,7 +50,10 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     qml/pages/SoundEffectPage.qml \
     qml/components/AccelerationIndicator.qml \
     rpm/harbour-advcompogallery.yaml \
-    rpm/harbour-advcompog
+    rpm/harbour-advcompog \
+    qml/pages/MapPage.qml \
+    qml/components/MapModes.qml \
+    qml/components/Vector2D.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

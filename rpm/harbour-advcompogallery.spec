@@ -22,7 +22,9 @@ Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-advcompogallery.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   qt5-qtdeclarative-import-positioning >= 5.2
+Requires:   qt5-qtdeclarative-import-location >= 5.0
 Requires:   qt5-qtdeclarative-import-sensors >= 5.2
+Requires:   qt5-plugin-geoservices-osm >= 5.2
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
