@@ -8,6 +8,8 @@ import "../components"
 Page {
   id: root
 
+  property var places: [];
+
   backNavigation: drawer.open
 
   MapModes {
@@ -51,21 +53,8 @@ Page {
 
           wrapMode: Text.WordWrap
 
-          text: switch ( modeSelector.currentItem.mode )
-                {
-                case modes.ownPosition:
-                  return qsTr("Press the map to show/hide full map,"
-                              + " own position is shown with uncertainty circle.");
-                case modes.drawRoute:
-                  return qsTr("Click on the map to define route points.");
-                case modes.placeMarkers:
-                  return qsTr("Click on the map to place marker. "
-                              + "Bottom corner of the rectangle is placed on the coordinate.");
-                case modes.markersNearby:
-                  return qsTr("Color markers inside a 1500 m radius circle, centered at clicked point.");
-                default:
-                  return qsTr("Error, faulty mode");
-                }
+          text: modes.getDescription( modeSelector.currentItem.mode )
+
         }
 
         SectionHeader {
@@ -81,21 +70,13 @@ Page {
           description: qsTr("Functionality mode for the map")
 
           menu: ContextMenu {
-            MenuItem {
-              text: qsTr("Own position")
-              property int mode: modes.ownPosition
-            }
-            MenuItem {
-              text: qsTr("Draw route")
-              property int mode: modes.drawRoute
-            }
-            MenuItem {
-              text: qsTr("Place markers")
-              property int mode: modes.placeMarkers
-            }
-            MenuItem {
-              text: qsTr("Nearby markers")
-              property int mode: modes.markersNearby
+            Repeater {
+              model: modes.availableModes
+
+              MenuItem {
+                text: modes.getMenuString(modelMode)
+                property int mode: modelMode
+              }
             }
           }
         }
@@ -107,6 +88,7 @@ Page {
           onClicked: {
 
             map.clearMapItems();
+            route.path = [];
             map.addMapItem(ownPosition);
             map.addMapItem(uncertaintyCircle);
             map.addMapItem(route);
@@ -165,6 +147,12 @@ Page {
         }
 
         Component.onCompleted: {
+
+          modes.addAvailableMode(modes.ownPosition);
+          modes.addAvailableMode(modes.drawRoute);
+          modes.addAvailableMode(modes.placeMarkers);
+          modes.addAvailableMode(modes.markersNearby);
+
           map.addMapItem(ownPosition);
           map.addMapItem(uncertaintyCircle);
           map.addMapItem(route);
@@ -192,8 +180,6 @@ Page {
         MapCircle {
           id: uncertaintyCircle
 
-//          visible: modeSelector.currentItem.mode === modes.ownPosition
-
           center: positionSrc.position.coordinate
 
           radius: positionSrc.position.horizontalAccuracy
@@ -208,8 +194,6 @@ Page {
         MapCircle {
           id: containingCircle
 
-//          visible: modeSelector.currentItem.mode === modes.placesNearby
-
           radius: 1500
 
           color: "blue"
@@ -218,8 +202,6 @@ Page {
 
         MapPolyline {
           id: route
-
-//          visible: modeSelector.currentItem.mode === modes.drawRoute
 
           line.color: "blue"
           line.width: 3
@@ -268,8 +250,6 @@ Page {
     });
   }
 
-  property var places: [];
-
   function addRoutePoint(point)
   {
     route.addCoordinate(map.toCoordinate(point));
@@ -284,50 +264,9 @@ Page {
 
   Component {
     id: locationMarkerComponent
+    MapMarker {
 
-    MapQuickItem {
-      id: locationMarker
-
-      anchorPoint.x: 0
-      anchorPoint.y: 0
-
-      sourceItem: Rectangle {
-
-        id: markerItem
-
-//        visible: modeSelector.currentItem.mode === modes.placeMarkers
-//                 ||
-//                 modeSelector.currentItem.mode === modes.placesNearby
-
-        property int diagonal: Math.sqrt(Math.pow(width, 2)+Math.pow(height, 2))
-
-        transformOrigin: Item.TopLeft
-
-        rotation: 45+180
-
-        color: "red"
-        opacity: 0.7
-
-        width: 40
-        height: 40
-
-        MouseArea {
-          anchors.fill: parent
-          onClicked: {
-            map.removeMapItem(locationMarker);
-            places.splice(places.indexOf(locationMarker), 1);
-          }
-        }
-
-        Rectangle {
-          x: -2.5
-          y: -2.5
-          radius: 5
-          width: radius
-          height: radius
-          color: "black"
-        }
-      }
     }
+
   }
 }

@@ -398,14 +398,34 @@
     </message>
 </context>
 <context>
-    <name>MapPage</name>
+    <name>MapModes</name>
     <message>
-        <source></source>
-        <translation></translation>
+        <source>Press the map to show/hide full map, own position is shown with uncertainty circle.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Controls</source>
-        <translation type="unfinished">Ohjaus</translation>
+        <source>Click on the map to define route points.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click on the map to place marker. Bottom corner of the rectangle is placed on the coordinate.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color markers inside a 1500 m radius circle, centered at clicked point.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click waypoints on the map to find route between. Clear all waypoints with button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Places markers to places within 500 m from map center, by searching with keyword.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error, faulty mode</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Own position</source>
@@ -418,6 +438,29 @@
     <message>
         <source>Place markers</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nearby markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find route</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nearby places</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MapPage</name>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished">Ohjaus</translation>
     </message>
     <message>
         <source>Indicators</source>
@@ -449,30 +492,6 @@
     </message>
     <message>
         <source>Guide</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Press the map to show/hide full map, own position is shown with uncertainty circle.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Click on the map to define route points.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Click on the map to place marker. Bottom corner of the rectangle is placed on the coordinate.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color markers inside a 1500 m radius circle, centered at clicked point.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error, faulty mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nearby markers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -713,14 +732,6 @@ Etäisyys %1 m ja suuntima %2 astetta</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Places markers to places within 500 m from map center, by searching with keyword.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error, faulty mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Controls</source>
         <translation type="unfinished">Ohjaus</translation>
     </message>
@@ -733,19 +744,7 @@ Etäisyys %1 m ja suuntima %2 astetta</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Nearby places</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Find route</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Search places nearby (click map to search)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Click waypoints on the map to find route between. Clear all waypoints with button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

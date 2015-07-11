@@ -10,9 +10,6 @@ Page {
 
   backNavigation: drawer.open
 
-  property bool pluginSupportsRouting: false
-  property bool pluginSupportsPlaces: false
-
   MapModes {
     id: modes
   }
@@ -48,17 +45,7 @@ Page {
 
           wrapMode: Text.WordWrap
 
-          text: switch ( modeSelector.currentItem.mode )
-                {
-                case modes.routing:
-                  return qsTr("Click waypoints on the map to find route between. "
-                              + "Clear all waypoints with button");
-                case modes.placesNearby:
-                  return qsTr("Places markers to places within 500 m from map center,"
-                              + " by searching with keyword.");
-                default:
-                  return qsTr("Error, faulty mode");
-                }
+          text: modes.getDescription(modeSelector.currentItem.mode)
         }
 
         SectionHeader {
@@ -74,15 +61,12 @@ Page {
           description: qsTr("Functionality mode for the map")
 
           menu: ContextMenu {
-            MenuItem {
-              enabled: root.pluginSupportsPlaces
-              text: qsTr("Nearby places")
-              property int mode: modes.placesNearby
-            }
-            MenuItem {
-              enabled: root.pluginSupportsRouting
-              text: qsTr("Find route")
-              property int mode: modes.routing
+            Repeater {
+              model: modes.availableModes
+              MenuItem {
+                text: modes.getMenuString(mode)
+                property int mode: modelMode
+              }
             }
           }
         }
@@ -93,9 +77,8 @@ Page {
           width: parent.width - 2*Theme.paddingSmall
           x: Theme.paddingSmall
 
-          enabled: modeSelector.currentItem.mode === modes.placesNearby
-                   &&
-                   !searchModel.isLoading
+          visible: modeSelector.currentItem.mode === modes.placesNearby
+          enabled: !searchModel.isLoading
 
           label: qsTr("Search places nearby (click map to search)")
           placeholderText: label
@@ -120,7 +103,6 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         text: drawer.open ? qsTr("Close controls") : qsTr("Open controls")
         onClicked: {
-
           drawer.open = !drawer.open;
         }
       }
@@ -129,6 +111,9 @@ Page {
         id: map
 
         width: parent.width
+        opacity: searchModel.isLoading || routeModel.isLoading
+                 ? 0.5 : 1.0
+
         property real baseHeight: root.height-controlsButton.height
         height: drawer.open ? (baseHeight)-drawer.backgroundSize : baseHeight
 
@@ -144,54 +129,65 @@ Page {
           name: "osm"
           PluginParameter{ name:  "mapping.cache.directory" ; value: "/tmp/qtmap" }
           PluginParameter{ name:  "mapping.cache.size" ; value: "200000" }
-          PluginParameter{ name: "routing.host"; value: "http://router.project-osrm.org/viaroute" }
 
           Component.onCompleted: {
-            console.log("supports geoding: " + mapPlugin.supportsGeocoding())
-            console.log("supports places: " + mapPlugin.supportsPlaces())
-            console.log("supports mapping: " + mapPlugin.supportsMapping())
-            console.log("supports routing: " + mapPlugin.supportsRouting())
-
-            root.pluginSupportsPlaces = mapPlugin.supportsPlaces();
-            root.pluginSupportsRouting = mapPlugin.supportsRouting();
+            if(mapPlugin.supportsRouting())
+            {
+              modes.addAvailableMode(modes.routing);
+            }
+            if(mapPlugin.supportsPlaces())
+            {
+              modes.addAvailableMode(modes.placesNearby);
+            }
           }
         }
 
         MapItemView {
+
           model: routeModel
           delegate: Component {
+            id: normalRoute
             MapRoute {
+
+              visible: mapPlugin.name !== "osm"
+
               route: routeData
 
               line.color: "blue"
               line.width: 4
               smooth: true
               opacity: 0.9
+            }
+          }
+        }
 
-              Component.onCompleted: {
-
-                //Work around for bug in osm plugin:
-                if(mapPlugin.name === "osm")
-                {
-                  routeData.path.forEach(function (e,i,l){
-                    l[i].latitude = e.latitude / 10;
-                    l[i].longitude = e.longitude / 10;
-                  });
-                }
-              }
+        MapItemView {
+          model: routeModel
+          delegate: Component {
+            // Due to API change, OSM routing gives coordinates too large by a decade.
+            // OSMRoute component internally fixed coordinates and draws the route using
+            // MapPolyLine
+            OSMRoute {
+              visible: mapPlugin.name === "osm"
+              route: routeData
             }
           }
         }
 
         MapItemView {
           model: searchModel
-          delegate: locationMarkerComponent
+          delegate:  Component {
+            PlaceMarker {
+              name: title
+              coordinate: place.location.coordinate
+            }
+          }
         }
 
         MouseArea {
           anchors.fill: parent
 
-          enabled: !routeModel.isLoading
+          enabled: !routeModel.isLoading && !searchModel.isLoading
 
           onClicked: {
             switch ( modeSelector.currentItem.mode )
@@ -214,7 +210,6 @@ Page {
           anchors.centerIn: parent
 
           running: searchModel.isLoading || routeModel.isLoading
-
         }
       }
     }
@@ -241,7 +236,6 @@ Page {
     plugin: mapPlugin
 
     property bool isLoading: status === PlaceSearchModel.Loading
-
   }
 
   RouteQuery {
@@ -258,67 +252,5 @@ Page {
     property bool isLoading: status === RouteModel.Loading
 
     autoUpdate: false
-    onErrorChanged: {
-      console.log("routing error: " + errorString)
-    }
-  }
-
-  Component {
-    id: locationMarkerComponent
-
-    MapQuickItem {
-      id: locationMarker
-
-      anchorPoint.x: 0
-      anchorPoint.y: 0
-
-      coordinate: place.location.coordinate
-
-      property string name: title
-
-      sourceItem: Rectangle {
-
-        id: markerItem
-
-        property int diagonal: Math.sqrt(Math.pow(width, 2)+Math.pow(height, 2))
-
-        transformOrigin: Item.TopLeft
-
-        rotation: 45+180
-
-        color: "red"
-        opacity: 0.7
-
-        width: 40
-        height: 40
-
-        MouseArea {
-          anchors.fill: parent
-          onClicked: {
-            map.removeMapItem(locationMarker);
-          }
-        }
-
-        Rectangle {
-          x: -2.5
-          y: -2.5
-          radius: 5
-          width: radius
-          height: radius
-          color: "black"
-        }
-
-        Label {
-          x: 0
-          y: parent.height
-
-          rotation: 45 + 90
-
-          color: "black"
-
-          text: locationMarker.name
-        }
-      }
-    }
   }
 }
