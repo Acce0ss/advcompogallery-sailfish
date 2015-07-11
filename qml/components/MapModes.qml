@@ -6,6 +6,8 @@ QtObject {
   property int ownPosition: 1
   property int drawRoute: 2
   property int placeMarkers: 3
-  property int placesNearby: 4
+  property int markersNearby: 4
 
+  property int routing: 5
+  property int placesNearby: 6
 }

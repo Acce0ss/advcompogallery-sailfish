@@ -98,6 +98,13 @@ Page {
     }
 
     ListElement {
+      page: "RoutingAndPlacesPage.qml"
+      title: QT_TR_NOOP("Routing and places API")
+      subtitle: QT_TR_NOOP("finding places and routes")
+      section: QT_TR_NOOP("Position and location")
+    }
+
+    ListElement {
       page: "CameraPage.qml"
       title: QT_TR_NOOP("Camera")
       subtitle: QT_TR_NOOP("Viewfinder and saving an image")
@@ -152,6 +159,7 @@ Page {
     //            section: QT_TR_NOOP("")
     //        }
   }
+
   SilicaListView {
     id: listView
     anchors.fill: parent

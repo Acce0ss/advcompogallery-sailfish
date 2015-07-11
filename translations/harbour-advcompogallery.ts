@@ -363,6 +363,14 @@
         <source>Placing markers, drawing routes</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Routing and places API</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>finding places and routes</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MapPage</name>
@@ -384,10 +392,6 @@
     </message>
     <message>
         <source>Place markers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nearby places</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -436,6 +440,18 @@
     </message>
     <message>
         <source>Error, faulty mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nearby markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open controls</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -617,6 +633,65 @@
     </message>
     <message>
         <source>Detecting proximity</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RoutingAndPlacesPage</name>
+    <message>
+        <source>Using maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Places markers to places within 500 m from map center, by searching with keyword.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error, faulty mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functionality mode for the map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nearby places</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find route</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search places nearby (click map to search)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click waypoints on the map to find route between. Clear all waypoints with button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear all waypoints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open controls</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

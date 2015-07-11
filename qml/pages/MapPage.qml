@@ -61,7 +61,7 @@ Page {
                 case modes.placeMarkers:
                   return qsTr("Click on the map to place marker. "
                               + "Bottom corner of the rectangle is placed on the coordinate.");
-                case modes.placesNearby:
+                case modes.markersNearby:
                   return qsTr("Color markers inside a 1500 m radius circle, centered at clicked point.");
                 default:
                   return qsTr("Error, faulty mode");
@@ -94,8 +94,8 @@ Page {
               property int mode: modes.placeMarkers
             }
             MenuItem {
-              text: qsTr("Nearby places")
-              property int mode: modes.placesNearby
+              text: qsTr("Nearby markers")
+              property int mode: modes.markersNearby
             }
           }
         }
@@ -135,10 +135,21 @@ Page {
       id: mapContent
       width: parent.width
 
+      Button {
+        id: controlsButton
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: drawer.open ? qsTr("Close controls") : qsTr("Open controls")
+        onClicked: {
+
+          drawer.open = !drawer.open;
+        }
+      }
+
       Map {
         id: map
         width: parent.width
-        height: drawer.open ? root.height-drawer.backgroundSize : root.height
+        property real baseHeight: root.height-controlsButton.height
+        height: drawer.open ? (baseHeight)-drawer.backgroundSize : baseHeight
 
         Behavior on height {
           NumberAnimation { duration: 200 }
@@ -228,8 +239,8 @@ Page {
             case modes.placeMarkers:
               addMarker(Qt.point(mouse.x, mouse.y));
               break;
-            case modes.placesNearby:
-              showPlacesNear(Qt.point(mouse.x, mouse.y))
+            case modes.markersNearby:
+              showMarkersNear(Qt.point(mouse.x, mouse.y))
               break;
             default:
               break;
@@ -240,7 +251,7 @@ Page {
     }
   }
 
-  function showPlacesNear(point)
+  function showMarkersNear(point)
   {
     containingCircle.center = map.toCoordinate(point);
     var circle = QtPositioning.circle(containingCircle.center, containingCircle.radius);

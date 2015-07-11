@@ -53,7 +53,8 @@ OTHER_FILES += qml/harbour-advcompogallery.qml \
     rpm/harbour-advcompog \
     qml/pages/MapPage.qml \
     qml/components/MapModes.qml \
-    qml/components/Vector2D.qml
+    qml/components/Vector2D.qml \
+    qml/pages/RoutingAndPlacesPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
