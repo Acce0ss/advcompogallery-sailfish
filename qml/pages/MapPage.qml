@@ -88,7 +88,6 @@ Page {
           onClicked: {
 
             map.clearMapItems();
-            route.path = [];
             map.addMapItem(ownPosition);
             map.addMapItem(uncertaintyCircle);
             map.addMapItem(route);
@@ -138,30 +137,14 @@ Page {
         }
 
         zoomLevel: 10
-        center: QtPositioning.coordinate( 60.45, 22.25)
+        center { latitude: 60.45; longitude: 22.25 }
 
         plugin: Plugin {
           name: "osm"
-          PluginParameter{ name:  "mapping.cache.directory" ; value: "/tmp/qtmap" }
-          PluginParameter{ name:  "mapping.cache.size" ; value: "200000" }
-        }
-
-        Component.onCompleted: {
-
-          modes.addAvailableMode(modes.ownPosition);
-          modes.addAvailableMode(modes.drawRoute);
-          modes.addAvailableMode(modes.placeMarkers);
-          modes.addAvailableMode(modes.markersNearby);
-
-          map.addMapItem(ownPosition);
-          map.addMapItem(uncertaintyCircle);
-          map.addMapItem(route);
         }
 
         MapQuickItem {
           id: ownPosition
-
-          visible: modeSelector.currentItem.mode === modes.ownPosition
 
           anchorPoint.x: positionCircle.width / 2
           anchorPoint.y: positionCircle.width / 2
@@ -212,9 +195,6 @@ Page {
           onClicked: {
             switch ( modeSelector.currentItem.mode )
             {
-            case modes.ownPosition:
-              drawer.open = !drawer.open;
-              break;
             case modes.drawRoute:
               addRoutePoint(Qt.point(mouse.x, mouse.y));
               break;
@@ -229,6 +209,16 @@ Page {
             }
           }
         }
+        Component.onCompleted: {
+
+          modes.addAvailableMode(modes.drawRoute);
+          modes.addAvailableMode(modes.placeMarkers);
+          modes.addAvailableMode(modes.markersNearby);
+
+          map.addMapItem(ownPosition);
+          map.addMapItem(uncertaintyCircle);
+          map.addMapItem(route);
+        }
       }
     }
   }
@@ -237,15 +227,15 @@ Page {
   {
     containingCircle.center = map.toCoordinate(point);
     var circle = QtPositioning.circle(containingCircle.center, containingCircle.radius);
-    places.forEach(function (e,i,l)
+    places.forEach(function (place,index,originalList)
     {
-      if(circle.contains(e.coordinate))
+      if(circle.contains(place.coordinate))
       {
-        e.sourceItem.color = "green";
+        place.sourceItem.color = "green";
       }
       else
       {
-        e.sourceItem.color = "red";
+        place.sourceItem.color = "red";
       }
     });
   }

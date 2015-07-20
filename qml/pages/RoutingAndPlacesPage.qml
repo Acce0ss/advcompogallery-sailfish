@@ -122,13 +122,11 @@ Page {
         }
 
         zoomLevel: 10
-        center: QtPositioning.coordinate( 60.45, 22.25)
+        center { latitude: 60.45; longitude: 22.25 }
 
         plugin: Plugin {
           id: mapPlugin
           name: "osm"
-          PluginParameter{ name:  "mapping.cache.directory" ; value: "/tmp/qtmap" }
-          PluginParameter{ name:  "mapping.cache.size" ; value: "200000" }
 
           Component.onCompleted: {
             if(mapPlugin.supportsRouting())
@@ -203,14 +201,6 @@ Page {
             }
           }
         }
-
-        BusyIndicator {
-          id: busyInd
-
-          anchors.centerIn: parent
-
-          running: searchModel.isLoading || routeModel.isLoading
-        }
       }
     }
   }
@@ -233,8 +223,37 @@ Page {
 
   PlaceSearchModel {
     id: searchModel
-    plugin: mapPlugin
+    plugin: Plugin {
+      name: "nokia"
+      //set the correct values and uncomment following lines to use places:
+//      PluginParameter{ name: "app_id" ; value: "your_appid" }
+//      PluginParameter{ name: "token" ; value: "your_token" }
+      Component.onCompleted: {
+        if(supportsPlaces() && appIdAndTokenGiven())
+        {
+          modes.addAvailableMode(modes.placesNearby);
+        }
+      }
 
+      function appIdAndTokenGiven()
+      {
+        var appIdGiven = false;
+        var tokenGiven = false;
+        for(var i=0; i < parameters.length; i++)
+        {
+          if(parameters[i].name === "app_id")
+          {
+            appIdGiven = true;
+          }
+          else if(parameters[i].name === "token")
+          {
+            tokenGiven = true;
+          }
+        }
+
+        return appIdGiven && tokenGiven;
+      }
+    }
     property bool isLoading: status === PlaceSearchModel.Loading
   }
 
@@ -252,5 +271,14 @@ Page {
     property bool isLoading: status === RouteModel.Loading
 
     autoUpdate: false
+  }
+
+  BusyIndicator {
+    id: busyInd
+
+    size: BusyIndicatorSize.Large
+    anchors.centerIn: parent
+
+    running: searchModel.isLoading || routeModel.isLoading
   }
 }
