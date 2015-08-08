@@ -176,7 +176,8 @@ Page {
           model: searchModel
           delegate:  Component {
             PlaceMarker {
-              name: title
+              name: place.name
+              icon: place.icon
               coordinate: place.location.coordinate
             }
           }
@@ -194,7 +195,7 @@ Page {
               addRoutePoint(Qt.point(mouse.x, mouse.y));
               break;
             case modes.placesNearby:
-              showPlacesNear(map.center, keywordField.text)
+              showPlacesNear(Qt.point(mouse.x, mouse.y), keywordField.text)
               break;
             default:
               break;
@@ -205,9 +206,9 @@ Page {
     }
   }
 
-  function showPlacesNear(coord, keyword)
+  function showPlacesNear(point, keyword)
   {
-    searchModel.searchArea = QtPositioning.circle(coord, 1500);
+    searchModel.searchArea = QtPositioning.circle(map.toCoordinate(point), 1500);
     searchModel.searchTerm = keyword;
     searchModel.update();
   }
