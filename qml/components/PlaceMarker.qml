@@ -8,28 +8,19 @@ MapQuickItem {
   anchorPoint.y: markerItem.height
 
   property string name
+  property Icon icon
 
-  sourceItem: Text {
+  sourceItem: Image {
     id: markerItem
 
-    color: "black"
+    source: icon !== null ? icon.url(32) : ""
 
-    text: locationMarker.name
+    Text {
+        anchors.top: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: locationMarker.name
 
-    Rectangle {
-
-      x: locationMarker.anchorPoint.x
-      y: locationMarker.anchorPoint.y
-
-      transformOrigin: Item.TopLeft
-
-      rotation: 45+180
-
-      color: "red"
-      opacity: 0.7
-
-      width: 40
-      height: 40
+        color: "black"
     }
   }
 }
