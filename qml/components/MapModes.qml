@@ -16,8 +16,7 @@ QtObject {
     switch ( mode )
     {
     case root.ownPosition:
-      return qsTr("Press the map to show/hide full map,"
-                  + " own position is shown with uncertainty circle.");
+      return qsTr("Own position is shown with uncertainty circle.");
     case root.drawRoute:
       return qsTr("Click on the map to define route points.");
     case root.placeMarkers:
@@ -29,7 +28,7 @@ QtObject {
       return qsTr("Click waypoints on the map to find route between. "
                   + "Clear all waypoints with button");
     case root.placesNearby:
-      return qsTr("Places markers to places within 500 m from map center,"
+      return qsTr("Places markers to places within 500 m from touch point,"
                   + " by searching with keyword.");
     default:
       return qsTr("Error, faulty mode");

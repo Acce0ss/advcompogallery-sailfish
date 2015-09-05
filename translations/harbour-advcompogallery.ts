@@ -375,10 +375,6 @@
 <context>
     <name>MapModes</name>
     <message>
-        <source>Press the map to show/hide full map, own position is shown with uncertainty circle.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Click on the map to define route points.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -392,10 +388,6 @@
     </message>
     <message>
         <source>Click waypoints on the map to find route between. Clear all waypoints with button</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Places markers to places within 500 m from map center, by searching with keyword.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -424,6 +416,14 @@
     </message>
     <message>
         <source>Nearby places</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Own position is shown with uncertainty circle.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Places markers to places within 500 m from touch point, by searching with keyword.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

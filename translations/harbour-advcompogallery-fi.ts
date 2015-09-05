@@ -378,78 +378,78 @@
     </message>
     <message>
         <source>Position and location</source>
-        <translation type="unfinished"></translation>
+        <translation>Sijainti ja paikka</translation>
     </message>
     <message>
         <source>Using maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Karttojen käyttö</translation>
     </message>
     <message>
         <source>Placing markers, drawing routes</source>
-        <translation type="unfinished"></translation>
+        <translation>Merkkien asettaminen, reittien piirtäminen</translation>
     </message>
     <message>
         <source>Routing and places API</source>
-        <translation type="unfinished"></translation>
+        <translation>Reititys- ja paikkarajapinta</translation>
     </message>
     <message>
         <source>finding places and routes</source>
-        <translation type="unfinished"></translation>
+        <translation>Löydä paikkoja ja reittejä</translation>
     </message>
 </context>
 <context>
     <name>MapModes</name>
     <message>
-        <source>Press the map to show/hide full map, own position is shown with uncertainty circle.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Click on the map to define route points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Paina karttaa määrittääksesi reittipisteet.</translation>
     </message>
     <message>
         <source>Click on the map to place marker. Bottom corner of the rectangle is placed on the coordinate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Paina karttaa asettaaksesi merkin. Neliön alanurkka asettuu koordinaattiin.</translation>
     </message>
     <message>
         <source>Color markers inside a 1500 m radius circle, centered at clicked point.</source>
-        <translation type="unfinished"></translation>
+        <translation>Väritä merkinnät 1500 m säteellä painalluskohdasta.</translation>
     </message>
     <message>
         <source>Click waypoints on the map to find route between. Clear all waypoints with button</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Places markers to places within 500 m from map center, by searching with keyword.</source>
-        <translation type="unfinished"></translation>
+        <translation>Paina välietapit kartalle löytääksesi reitin niiden välillä. Poista etapit napilla</translation>
     </message>
     <message>
         <source>Error, faulty mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheellinen tila</translation>
     </message>
     <message>
         <source>Own position</source>
-        <translation type="unfinished"></translation>
+        <translation>Oma sijainti</translation>
     </message>
     <message>
         <source>Draw route</source>
-        <translation type="unfinished"></translation>
+        <translation>Piirrä reitti</translation>
     </message>
     <message>
         <source>Place markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta merkki</translation>
     </message>
     <message>
         <source>Nearby markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Merkit lähistöllä</translation>
     </message>
     <message>
         <source>Find route</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsi reitti</translation>
     </message>
     <message>
         <source>Nearby places</source>
-        <translation type="unfinished"></translation>
+        <translation>Läheiset paikat</translation>
+    </message>
+    <message>
+        <source>Own position is shown with uncertainty circle.</source>
+        <translation>Oma sijainti epävarmuusympyrän kanssa.</translation>
+    </message>
+    <message>
+        <source>Places markers to places within 500 m from touch point, by searching with keyword.</source>
+        <translation>Aseta merkinnät paikkoihin 500 m säteellä kosketuskohdasta.</translation>
     </message>
 </context>
 <context>
@@ -460,7 +460,7 @@
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished">Ohjaus</translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Indicators</source>
@@ -468,39 +468,39 @@
     </message>
     <message>
         <source>Center map to my position</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskitä kartta sijaintiini</translation>
     </message>
     <message>
         <source>Using maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Karttojen käyttö</translation>
     </message>
     <message>
         <source>Mode: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tila:</translation>
     </message>
     <message>
         <source>Functionality mode for the map</source>
-        <translation type="unfinished"></translation>
+        <translation>kartan toimintatila</translation>
     </message>
     <message>
         <source>Clear all items in map</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kaikki asiat kartalta</translation>
     </message>
     <message>
         <source>Clear Route</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista reitti</translation>
     </message>
     <message>
         <source>Guide</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjeet</translation>
     </message>
     <message>
         <source>Close controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje ohjaimet</translation>
     </message>
     <message>
         <source>Open controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa ohjaimet</translation>
     </message>
 </context>
 <context>
@@ -725,39 +725,39 @@ Etäisyys %1 m ja suuntima %2 astetta</translation>
     <name>RoutingAndPlacesPage</name>
     <message>
         <source>Using maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Karttojen käyttö</translation>
     </message>
     <message>
         <source>Guide</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohje</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished">Ohjaus</translation>
+        <translation>Ohjaus</translation>
     </message>
     <message>
         <source>Mode: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tila:</translation>
     </message>
     <message>
         <source>Functionality mode for the map</source>
-        <translation type="unfinished"></translation>
+        <translation>kartan toimintatila</translation>
     </message>
     <message>
         <source>Search places nearby (click map to search)</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsi läheisiä paikkoja (paina karttaa etsiäksesi)</translation>
     </message>
     <message>
         <source>Clear all waypoints</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista välietapit</translation>
     </message>
     <message>
         <source>Close controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje ohjaimet</translation>
     </message>
     <message>
         <source>Open controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa ohjaimet</translation>
     </message>
 </context>
 <context>
