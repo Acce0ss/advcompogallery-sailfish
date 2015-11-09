@@ -94,14 +94,6 @@
 <context>
     <name>CompassPage</name>
     <message>
-        <source>Available position sources</source>
-        <translation type="obsolete">Tarjolla olevat paikannusmenetelmät</translation>
-    </message>
-    <message>
-        <source>Used positioning method: %1</source>
-        <translation type="obsolete">Käytetty paikannusmenetelmä: %1</translation>
-    </message>
-    <message>
         <source>Compass</source>
         <translation>Kompassi</translation>
     </message>
@@ -120,10 +112,6 @@
     <message>
         <source>Angle: %1</source>
         <translation>Kulma: %1</translation>
-    </message>
-    <message>
-        <source>calibration level</source>
-        <translation type="obsolete">Kalibrointitaso</translation>
     </message>
 </context>
 <context>
@@ -222,14 +210,6 @@
 <context>
     <name>GyroscopePage</name>
     <message>
-        <source>Available position sources</source>
-        <translation type="obsolete">Tarjolla olevat paikannusmenetelmät</translation>
-    </message>
-    <message>
-        <source>Used positioning method: %1</source>
-        <translation type="obsolete">Käytetty paikannusmenetelmä: %1</translation>
-    </message>
-    <message>
         <source>Controls</source>
         <translation>Ohjaus</translation>
     </message>
@@ -244,10 +224,6 @@
     <message>
         <source></source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Rotational acceleration</source>
-        <translation type="vanished">Kiihtyvyys kierron suhteen</translation>
     </message>
     <message>
         <source>around X-axis: %1&lt;br&gt;around Y-axis: %2&lt;br&gt;around Z-axis: %3</source>
@@ -463,10 +439,6 @@
         <translation>Ohjaus</translation>
     </message>
     <message>
-        <source>Indicators</source>
-        <translation type="obsolete">Ilmaisimet</translation>
-    </message>
-    <message>
         <source>Center map to my position</source>
         <translation>Keskitä kartta sijaintiini</translation>
     </message>
@@ -514,16 +486,8 @@
         <translation>Ohjaus</translation>
     </message>
     <message>
-        <source>Publish notification</source>
-        <translation type="obsolete">Julkaise ilmoitus</translation>
-    </message>
-    <message>
         <source>Content</source>
         <translation>Sisältö</translation>
-    </message>
-    <message>
-        <source>Notification active</source>
-        <translation type="obsolete">Ilmoitus aktiivinen</translation>
     </message>
     <message>
         <source>Summary of the notification</source>
@@ -612,10 +576,6 @@
         <translation>Paikannus</translation>
     </message>
     <message>
-        <source>Available position sources</source>
-        <translation type="obsolete">Tarjolla olevat paikannusmenetelmät</translation>
-    </message>
-    <message>
         <source>Used positioning method: %1</source>
         <translation>Käytetty paikannusmenetelmä: %1</translation>
     </message>
@@ -640,18 +600,6 @@
         <translation>Paikannuslähteen virhe</translation>
     </message>
     <message>
-        <source>You&apos;re at %1 latitude, %2 longitude</source>
-        <translation type="vanished">Olet leveyspiirillä %1 ja pituuspiirillä %2</translation>
-    </message>
-    <message>
-        <source>Stop updating</source>
-        <translation type="obsolete">Lopeta päivittäminen</translation>
-    </message>
-    <message>
-        <source>Start updating</source>
-        <translation type="obsolete">Aloita päivittäminen</translation>
-    </message>
-    <message>
         <source>position update interval</source>
         <translation>Päivitysten aikaväli</translation>
     </message>
@@ -672,10 +620,6 @@
         <translation>Ilmaisimet</translation>
     </message>
     <message>
-        <source>Your speed is %1 m/s, and altitude approximately %2 m</source>
-        <translation type="vanished">Nopeutesi on %1 m/s ja korkeutesi merenpinnasta noin %2 m.</translation>
-    </message>
-    <message>
         <source>From Helsinki to your location:
  distance %1 m, and bearing %2 degrees</source>
         <translation>Helsingistä katsoen:
@@ -692,14 +636,6 @@ Etäisyys %1 m ja suuntima %2 astetta</translation>
 </context>
 <context>
     <name>ProximityPage</name>
-    <message>
-        <source>Available position sources</source>
-        <translation type="obsolete">Tarjolla olevat paikannusmenetelmät</translation>
-    </message>
-    <message>
-        <source>Used positioning method: %1</source>
-        <translation type="obsolete">Käytetty paikannusmenetelmä: %1</translation>
-    </message>
     <message>
         <source>Proximity</source>
         <translation>Läheisyys</translation>
@@ -789,14 +725,6 @@ Etäisyys %1 m ja suuntima %2 astetta</translation>
 <context>
     <name>TapsPage</name>
     <message>
-        <source>Available position sources</source>
-        <translation type="obsolete">Tarjolla olevat paikannusmenetelmät</translation>
-    </message>
-    <message>
-        <source>Used positioning method: %1</source>
-        <translation type="obsolete">Käytetty paikannusmenetelmä: %1</translation>
-    </message>
-    <message>
         <source>From right</source>
         <translation>Oikealta</translation>
     </message>
@@ -851,10 +779,6 @@ Etäisyys %1 m ja suuntima %2 astetta</translation>
 </context>
 <context>
     <name>TemplatePage</name>
-    <message>
-        <source>Available position sources</source>
-        <translation type="obsolete">Tarjolla olevat paikannusmenetelmät</translation>
-    </message>
     <message>
         <source>Used positioning method: %1</source>
         <translation>Käytetty paikannusmenetelmä: %1</translation>

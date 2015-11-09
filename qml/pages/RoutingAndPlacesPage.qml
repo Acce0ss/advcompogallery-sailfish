@@ -122,7 +122,6 @@ Page {
         }
 
         zoomLevel: 10
-        center { latitude: 60.45; longitude: 22.25 }
 
         plugin: Plugin {
           id: mapPlugin
@@ -202,13 +201,15 @@ Page {
             }
           }
         }
+
+        Component.onCompleted: center = QtPositioning.coordinate(60.45, 22.25)
       }
     }
   }
 
   function showPlacesNear(point, keyword)
   {
-    searchModel.searchArea = QtPositioning.circle(map.toCoordinate(point), 1500);
+    searchModel.searchArea = QtPositioning.circle(map.toCoordinate(point), 500);
     searchModel.searchTerm = keyword;
     searchModel.update();
   }

@@ -137,7 +137,6 @@ Page {
         }
 
         zoomLevel: 10
-        center { latitude: 60.45; longitude: 22.25 }
 
         plugin: Plugin {
           name: "osm"
@@ -210,6 +209,8 @@ Page {
           }
         }
         Component.onCompleted: {
+
+          center = QtPositioning.coordinate(60.45, 22.25);
 
           modes.addAvailableMode(modes.drawRoute);
           modes.addAvailableMode(modes.placeMarkers);
